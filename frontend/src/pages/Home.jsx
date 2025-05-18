@@ -43,7 +43,7 @@ function Home() {
         className="relative w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
         style={{ 
           backgroundImage: `url(${HeroImage})`, 
-          height: "100dvh"
+          height: "100svh"
         }}
       >
         {/* Hero Text */}
