@@ -40,7 +40,7 @@ function Home() {
 
       {/* Hero Section */}
       <div
-        className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
+        className="relative w-full h-[100dvh] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
         style={{ backgroundImage: `url(${HeroImage})` }}
       >
         {/* Hero Text */}
