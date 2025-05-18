@@ -140,6 +140,56 @@ function About() {
                     ))}
                 </div>
             </div>
+            {/* Our Values Section */}
+            <div className="bg-white py-16 px-6 md:px-12 lg:px-24">
+                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                    Our Values
+                </h2>
+                <div className="max-w-5xl mx-auto space-y-8 text-gray-800 text-lg leading-relaxed">
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value People</h3>
+                        <p>
+                            People matter to God, and therefore they matter to us. Every person is created in the image of God and has inherent worth and purpose. We strive to love, welcome, and serve others the way Jesus does—with compassion, grace, and dignity—regardless of background or circumstance.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Application of Scripture</h3>
+                        <p>
+                            We believe the Bible is not just to be studied—it’s meant to be lived. Teaching should lead to transformation, and God's Word provides practical guidance for everyday life. Through Scripture, we gain wisdom for decision-making, encouragement in trials, and direction for walking faithfully with Christ.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Relationships</h3>
+                        <p>
+                            Life change happens best in the context of meaningful relationships. That’s why we emphasize Connect Groups—where people can be known, supported, and encouraged in their faith journey. We believe in growing larger as a church while also growing smaller through intimate, Christ-centered community.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Excellence</h3>
+                        <p>
+                            Excellence honors God and inspires people. While perfection is not our aim, we believe that giving our best in every area—worship, teaching, leadership, service—demonstrates our love for God and commitment to His mission. We serve with intentionality, purpose, and a spirit of excellence in all we do.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Service</h3>
+                        <p>
+                            Every believer is called to serve. God has uniquely gifted each of us for ministry within the church and mission in the world. We believe the church thrives when everyone finds their role and uses their gifts to serve others with humility, generosity, and love—just as Jesus did.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Creativity and Innovation</h3>
+                        <p>
+                            The Gospel never changes, but the way we share it can. We embrace creativity and innovation as tools for reaching people in fresh, engaging ways. Whether through worship, technology, or outreach, we are committed to using God-given imagination to communicate His unchanging truth.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className="font-semibold text-xl mb-1">We Value Unity</h3>
+                        <p>
+                            In a divided world, we choose unity. We focus on what unites us—our shared faith in Jesus Christ—and refuse to let secondary issues divide us. Unity doesn't mean uniformity, but it does mean choosing grace, humility, and love in how we treat one another as the body of Christ.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
