@@ -40,8 +40,11 @@ function Home() {
 
       {/* Hero Section */}
       <div
-        className="relative w-full h-[100dvh] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
-        style={{ backgroundImage: `url(${HeroImage})` }}
+        className="relative w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
+        style={{ 
+          backgroundImage: `url(${HeroImage})`, 
+          height: "100dvh"
+        }}
       >
         {/* Hero Text */}
         <div className="relative z-10 space-y-6 mt-32 md:mt-48">
