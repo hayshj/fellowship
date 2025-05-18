@@ -10,7 +10,7 @@ function Live() {
                 <div className="w-full h-full max-w-7xl aspect-video">
                     <iframe
                         className="w-full h-full"
-                        src="https://www.youtube.com/embed/live_stream?channel=UCOQMLKUsbcawmwWQMFnHYIw&autoplay=1&mute=1"
+                        src="https://www.youtube.com/embed/live_stream?channel=UCOQMLKUsbcawmwWQMFnHYIw&autoplay=1"
                         title="YouTube Live Stream"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
