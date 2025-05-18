@@ -6,7 +6,7 @@ import Sermons from './pages/Sermons';
 import HubCentral from './pages/HubCentral';
 import Live from './pages/Live'
 import About from './pages/About';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 function App() {
   return (
