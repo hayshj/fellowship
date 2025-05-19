@@ -73,7 +73,7 @@ function Live() {
             } else {
                 setCountdown("Starting soon...");
             }
-        };
+        }
 
         checkLiveStatus();
         updateCountdown();
@@ -103,7 +103,9 @@ function Live() {
                     </div>
                 </div>
             ) : (
-                <div className="w-full min-h-screen bg-black text-white flex flex-col items-center justify-center pt-[80px] px-4 text-center">
+                <div 
+                    className="w-full min-h-screen bg-black text-white flex flex-col items-center justify-center pt-[80px] px-4 text-center"
+                >
                     <div className="max-w-xl">
                         <h1 className="text-4xl font-bold mb-4">Next Live Stream</h1>
                         <p className="text-2xl mb-2">Sunday at 10:55am CST</p>

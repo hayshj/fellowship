@@ -47,7 +47,7 @@ function Home() {
         }}
       >
         {/* Hero Text */}
-        <div className="relative z-10 space-y-6 mt-32 md:mt-48">
+        <div className="relative z-10 space-y-6 mt-32 md:mt-48 ">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             Welcome to Fellowship Church
           </h1>
@@ -55,7 +55,10 @@ function Home() {
             A place where faith grows, community thrives, and lives are changed.
             Join us this Sunday and experience authentic worship and teaching.
           </p>
-          <button className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+          <button 
+            className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
+            onClick={() => window.location.href = "/plan-your-visit"}
+          >
             Plan Your Visit
           </button>
         </div>

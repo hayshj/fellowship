@@ -8,28 +8,28 @@ function HubCentral() {
           description:
             "We would love to get to know you and give you more info about Fellowship. Click the link to fill out our digital connection card and we will have a gift waiting for you at the end of the service.",
           buttonText: "I'm New",
-          link: "#",
+          link: "https://churchteams.com/m/Register.asp?a=OExXKy9ZY3Vqamc9",
         },
         {
           title: "DIGITAL BULLETIN",
           description:
             "Click the button to get signed up for our weekly digital bulletin. Click here for today’s bulletin. (Only works on mobile devices)",
           buttonText: "Get Bulletin",
-          link: "#",
+          link: "https://i.bltn.io/fellowship/FjE71l",
         },
         {
           title: "GIVE",
           description:
             "The ministries of Fellowship Church are made possible by the generosity of those that give. Find out how you can set up automatically recurring or one-time contributions.",
           buttonText: "Give Now",
-          link: "#",
+          link: "https://churchteams.com/m/Give.asp?oID=13823&aID=YUVxR1c3S2N2SlhoTHM2bmNxUmdqUkpxa1JRdkJyUzU%3D",
         },
         {
           title: "MAKE A DECISION",
           description:
             "If you are making a decision to move your faith forward, we would love to help you. Let us know what decision you are making and we will have one of our pastors follow up with you.",
           buttonText: "Make a Decision",
-          link: "#",
+          link: "https://churchteams.com/m/Register.asp?a=K0gvalZKS2tmbU09",
         },
         {
           title: "CONNECT GROUPS",
@@ -43,7 +43,7 @@ function HubCentral() {
           description:
             "Sign up today and learn how you can partner with Fellowship Church and make this your church home.",
           buttonText: "Partnership",
-          link: "#",
+          link: "https://churchteams.com/m/Register.asp?a=NVNIVnFNWUs5Nlk9",
         },
         {
           title: "EVENTS",
@@ -64,7 +64,7 @@ function HubCentral() {
           description:
             "Has any of your contact information changed? Do you have a new address, phone number or email? Only works when using a mobile device.",
           buttonText: "Update Info",
-          link: "#",
+          link: "https://www.t2ll.com/auth/sms-redirect?phoneNumber=9728073070&msg=ME",
         },
         {
           title: "SOCIAL MEDIA",
