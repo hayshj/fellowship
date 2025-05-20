@@ -18,6 +18,9 @@ async function scrapeEvents() {
       const time = $(el).find('.ginfo span:contains("Time of day:")').next('.av').text().trim();
       const location = $(el).find('.ginfo span:contains("Location:")').next('.av').text().trim();
 
+      // Extract the start date (assuming it's stored in a similar span like "Day")
+      const startDate = $(el).find('.ginfo span:contains("Start Date:")').next('.av').text().trim();
+
       const registerLink = $(el).find('a[title="Register"]').attr('href');
       const fullRegisterLink = registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink;
 
@@ -30,6 +33,7 @@ async function scrapeEvents() {
         day,
         time,
         location,
+        startDate, // Add the start date to the event object
         registerLink: fullRegisterLink,
         image: fullImageUrl,
       });

@@ -20,8 +20,13 @@ router.get('/', async (req, res) => {
       const day = $(el).find('.ginfo span:contains("Day:")').next('.av').text().trim();
       const time = $(el).find('.ginfo span:contains("Time of day:")').next('.av').text().trim();
       const location = $(el).find('.ginfo span:contains("Location:")').next('.av').text().trim();
+      const startDate = $(el).find('.ginfo span:contains("Start Date:")').next('.av').text().trim();
+
       const registerLink = $(el).find('a[title="Register"]').attr('href');
+      const fullRegisterLink = registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink;
+
       const image = $(el).find('img.media-object').attr('src');
+      const fullImageUrl = image ? baseUrl + image : null;
 
       events.push({
         name,
@@ -29,8 +34,9 @@ router.get('/', async (req, res) => {
         day,
         time,
         location,
-        registerLink: registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink,  // Fix for the duplicate URL
-        image: image ? baseUrl + image : null,
+        startDate,
+        registerLink: fullRegisterLink,
+        image: fullImageUrl,
       });
     });
 

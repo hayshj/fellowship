@@ -9,7 +9,17 @@ function Events() {
       try {
         const response = await fetch("/api/events");
         const data = await response.json();
-        setEvents(data);
+        
+        // Filter out events where the start date has already passed
+        const futureEvents = data.filter(event => {
+          const startDate = new Date(event.startDate);  // Parse the start date
+          const today = new Date();
+          // Set time to 00:00:00 to avoid time comparisons
+          today.setHours(0, 0, 0, 0);
+          return startDate >= today;  // Only keep events with future start dates
+        });
+
+        setEvents(futureEvents);  // Update the state with future events
       } catch (error) {
         console.error("Error fetching events:", error);
       }
@@ -28,7 +38,7 @@ function Events() {
           {events.map((event, index) => (
             <div
               key={index}
-              className="flex flex-col bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden pb-6"  // Added padding-bottom here
+              className="flex flex-col bg-white rounded-2xl shadow overflow-hidden pb-6"
             >
               <div className="aspect-video w-full">
                 <img
@@ -41,7 +51,10 @@ function Events() {
               <div className="p-5 text-center flex-1">
                 <h2 className="text-xl font-bold text-black uppercase mb-2">{event.name}</h2>
                 <p className="text-sm text-neutral-800 mb-1 font-medium">{event.location}</p>
-                <p className="text-sm text-neutral-600">{`${event.day}${event.time ? ` @ ${event.time}` : ""}`}</p>
+                <p className="text-sm text-neutral-600">
+                  {event.startDate}
+                  {event.time && event.time !== "Not Applicable" ? ` @ ${event.time}` : ""}
+                </p>  {/* Conditionally add @ time only if time is not "Not Applicable" */}
               </div>
 
               {event.registerLink && (
