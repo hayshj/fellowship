@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/Navbar";
+import BlackNavbar from "../components/BlackNavbar";
 
 function Live() {
     const [isLive, setIsLive] = useState(false);
@@ -88,7 +88,7 @@ function Live() {
 
     return (
         <>
-            <Navbar />
+            <BlackNavbar />
             {isLive ? (
                 <div className="w-full h-screen bg-black flex items-center justify-center pt-[80px]">
                     <div className="w-full h-full max-w-7xl aspect-video">

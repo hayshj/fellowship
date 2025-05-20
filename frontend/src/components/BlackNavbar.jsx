@@ -76,6 +76,14 @@ function Navbar() {
         </button>
       </nav>
 
+      {/* Dark blurred background overlay when menu is open */}
+      {menuOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-black/50 bg-opacity-50 backdrop-blur-sm z-30"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
       {/* Slide-In Mobile Menu */}
       <div
         ref={menuRef}
@@ -92,7 +100,7 @@ function Navbar() {
               className="relative text-lg group text-left"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>

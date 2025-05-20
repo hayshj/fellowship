@@ -6,6 +6,7 @@ import Sermons from './pages/Sermons';
 import HubCentral from './pages/HubCentral';
 import Live from './pages/Live'
 import About from './pages/About';
+import Events from './pages/Events';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/hub" element={<HubCentral />} />
         <Route path="/live" element={<Live />} />
         <Route path="/about" element={<About />} />
+        <Route path="/events" element={<Events />} />
       </Routes>
       <Footer />
     </>

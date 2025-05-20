@@ -3,8 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/FC-Logo-Resized-300x76.png';
 
-function HomeNavbar() {
-  const [scrolled, setScrolled] = useState(false);
+function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -20,12 +19,6 @@ function HomeNavbar() {
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -45,26 +38,13 @@ function HomeNavbar() {
   }, [menuOpen]);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-
-  const scrollToTop = () => {
-    window.scrollTo(0, 0);
-  };
+  const scrollToTop = () => window.scrollTo(0, 0);
 
   return (
     <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center justify-between px-8 transition-colors duration-300 ${
-          scrolled ? 'bg-white shadow-lg text-black' : 'bg-transparent text-white'
-        }`}
-      >
+      <nav className="fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center justify-between px-8 bg-white text-black shadow-md">
         <div className="flex items-center gap-4">
-          <img
-            src={Logo}
-            alt="Logo"
-            className={`h-12 transition-all duration-300 ${
-              scrolled ? 'filter brightness-100' : 'brightness-0 invert'
-            }`}
-          />
+          <img src={Logo} alt="Logo" className="h-12" />
         </div>
 
         {/* Desktop Nav */}
@@ -77,7 +57,7 @@ function HomeNavbar() {
               className="relative text-lg group"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -88,7 +68,7 @@ function HomeNavbar() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           className="md:hidden"
         >
-          {menuOpen ? <X size={28} className="text-black" /> : <Menu size={28} />}
+          {menuOpen ? <X size={28} className="text-black" /> : <Menu size={28} className="text-black" />}
         </button>
       </nav>
 
@@ -107,7 +87,7 @@ function HomeNavbar() {
           menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col items-start p-6 gap-6 h-[80px] pt-[100px]">
+        <div className="flex flex-col items-start p-6 gap-6 pt-[100px]">
           {['/', '/plan-your-visit', '/sermons', '/hub'].map((link, i) => (
             <Link
               key={i}
@@ -125,4 +105,4 @@ function HomeNavbar() {
   );
 }
 
-export default HomeNavbar;
+export default Navbar;
