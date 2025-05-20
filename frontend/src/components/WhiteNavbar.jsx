@@ -38,13 +38,19 @@ function Navbar() {
   }, [menuOpen]);
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const scrollToTop = () => window.scrollTo(0, 0);
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+    setMenuOpen(false); // also close mobile menu if logo is tapped in mobile view
+  };
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center justify-between px-8 bg-white text-black shadow-md">
         <div className="flex items-center gap-4">
-          <img src={Logo} alt="Logo" className="h-12" />
+          <Link to="/" onClick={scrollToTop}>
+            <img src={Logo} alt="Logo" className="h-12" />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -92,7 +98,10 @@ function Navbar() {
             <Link
               key={i}
               to={link}
-              onClick={scrollToTop}
+              onClick={() => {
+                scrollToTop();
+                setMenuOpen(false); // close menu after clicking a mobile link
+              }}
               className="relative text-lg group text-left"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}

@@ -10,7 +10,7 @@ function HomeNavbar() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
-  
+
     if (menuOpen) {
       setScrolled(true);
     } else {
@@ -19,8 +19,6 @@ function HomeNavbar() {
       }
     }
   }, [menuOpen]);
-  
-  
 
   useEffect(() => {
     const handleResize = () => {
@@ -68,13 +66,15 @@ function HomeNavbar() {
         }`}
       >
         <div className="flex items-center gap-4">
-          <img
-            src={Logo}
-            alt="Logo"
-            className={`h-12 transition-all duration-300 ${
-              scrolled ? 'filter brightness-100' : 'brightness-0 invert'
-            }`}
-          />
+          <Link to="/" onClick={scrollToTop}>
+            <img
+              src={Logo}
+              alt="Logo"
+              className={`h-12 transition-all duration-300 ${
+                scrolled ? 'filter brightness-100' : 'brightness-0 invert'
+              }`}
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -122,7 +122,10 @@ function HomeNavbar() {
             <Link
               key={i}
               to={link}
-              onClick={scrollToTop}
+              onClick={() => {
+                scrollToTop();
+                setMenuOpen(false);
+              }}
               className="relative text-lg group text-left"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}

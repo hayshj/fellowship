@@ -44,11 +44,16 @@ function Navbar() {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center justify-between px-8 bg-black text-white shadow-md">
         <div className="flex items-center gap-4">
-          <img
-            src={Logo}
-            alt="Logo"
-            className="h-12 filter invert"
-          />
+          <Link to="/" onClick={() => {
+            scrollToTop();
+            setMenuOpen(false);
+          }}>
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-12 filter invert"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -96,7 +101,10 @@ function Navbar() {
             <Link
               key={i}
               to={link}
-              onClick={scrollToTop}
+              onClick={() => {
+                scrollToTop();
+                setMenuOpen(false);
+              }}
               className="relative text-lg group text-left"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}
