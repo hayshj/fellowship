@@ -10,7 +10,17 @@ function HomeNavbar() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+  
+    if (menuOpen) {
+      setScrolled(true);
+    } else {
+      if (window.scrollY <= 10) {
+        setScrolled(false);
+      }
+    }
   }, [menuOpen]);
+  
+  
 
   useEffect(() => {
     const handleResize = () => {
