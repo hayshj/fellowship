@@ -7,6 +7,8 @@ const path = require("path");
 
 const sermonRouter = require('./routes/api/sermon');
 const adminRouter = require('./routes/api/admin');
+const eventsRouter = require('./routes/api/events');
+
 
 dotenv.config(); // Load environment variables
 
@@ -23,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // ✅ API Routes
 app.use('/api/sermon', sermonRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/events', eventsRouter);
 
 // ✅ Serve frontend last (Vite uses 'dist'; CRA uses 'build')
 const frontendPath = path.join(__dirname, 'frontend', 'dist');

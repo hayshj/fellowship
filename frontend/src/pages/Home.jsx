@@ -18,6 +18,21 @@ import Now from "../assets/home/events/now.jpg";
 function Home() {
 
   const [latestSermon, setLatestSermon] = useState(null);
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events');
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   useEffect(() => {
     const fetchLatestSermon = async () => {
@@ -180,18 +195,12 @@ function Home() {
               }}
               className="w-full"
             >
-              {[
-                { img: Catm },
-                { img: Ce },
-                { img: Easter },
-                { img: Mao },
-                { img: Now },
-              ].map((event, index) => (
+              {events.map((event, index) => (
                 <SwiperSlide key={index}>
-                  <div className="rounded-xl aspect-[4/3] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out">
+                  <div className="rounded-xl aspect-[16/9] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out">
                     <img
-                      src={event.img}
-                      alt={`Event ${index + 1}`}
+                      src={event.image}
+                      alt={event.name}
                       className="w-full h-full object-cover"
                     />
                   </div>

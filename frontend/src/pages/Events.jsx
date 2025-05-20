@@ -31,7 +31,7 @@ function Events() {
         <WhiteNavbar />
         <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black pt-[105px]">
             <h1 className="text-4xl font-bold text-center mb-10">Upcoming Events</h1>
-
+            <iframe id="ctiframe" src="https://churchteams.com/m/GroupBrowseNew.asp?oID=13823&amp;s=MXdsZzNNbW1kbHAwK2tJc2cyUVVOQTEwa2xHQWZDK0s%3D&amp;filter=y&amp;q56335=309368" width="100%" height="768" frameborder="0"></iframe>
             <div className="grid gap-10 px-6 md:px-12 lg:px-24 md:grid-cols-2 lg:grid-cols-3">
                 {events.map((event) => (
                     <div
