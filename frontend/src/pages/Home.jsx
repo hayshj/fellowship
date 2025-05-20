@@ -197,25 +197,27 @@ function Home() {
             >
               {events.map((event, index) => (
                 <SwiperSlide key={index}>
-                  <div className="rounded-xl aspect-[16/9] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out">
-                    <img
-                      src={event.image}
-                      alt={event.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <a href={event.registerLink} target="_blank" rel="noopener noreferrer">
+                    <div className="rounded-xl aspect-[16/9] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out">
+                      <img
+                        src={event.image}
+                        alt={event.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </a>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
         </div>
-        {/* More Events Button */}
+        {/* All Events Button */}
         <div className="flex justify-center mt-10">
           <button 
             className="border border-white px-6 py-2 rounded hover:bg-white hover:text-black transition"
             onClick={() => window.location.href = "/events"}
           >
-            More Events
+            All Events
           </button>
         </div>
       </div>
