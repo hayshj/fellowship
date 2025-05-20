@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
         day,
         time,
         location,
-        registerLink: registerLink ? baseUrl + registerLink : null,
+        registerLink: registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink,  // Fix for the duplicate URL
         image: image ? baseUrl + image : null,
       });
     });

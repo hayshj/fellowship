@@ -19,7 +19,7 @@ async function scrapeEvents() {
       const location = $(el).find('.ginfo span:contains("Location:")').next('.av').text().trim();
 
       const registerLink = $(el).find('a[title="Register"]').attr('href');
-      const fullRegisterLink = registerLink ? baseUrl + registerLink : null;
+      const fullRegisterLink = registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink;
 
       const imagePath = $(el).find('img.media-object').attr('src');
       const fullImageUrl = imagePath ? baseUrl + imagePath : null;

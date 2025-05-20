@@ -211,7 +211,10 @@ function Home() {
         </div>
         {/* More Events Button */}
         <div className="flex justify-center mt-10">
-          <button className="border border-white px-6 py-2 rounded hover:bg-white hover:text-black transition">
+          <button 
+            className="border border-white px-6 py-2 rounded hover:bg-white hover:text-black transition"
+            onClick={() => window.location.href = "/events"}
+          >
             More Events
           </button>
         </div>
