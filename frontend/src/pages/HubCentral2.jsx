@@ -1,18 +1,19 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
+import { Sprout, Newspaper, HandCoins, Lightbulb, Users, HeartHandshake, Ticket, Calendar, RefreshCcw, MonitorSmartphone } from 'lucide-react';
 
 function HubCentral() {
   const cards = [
-    { title: "I'M NEW", icon: "🌱", link: "https://churchteams.com/m/Register.asp?a=OExXKy9ZY3Vqamc9" },
-    { title: "DIGITAL BULLETIN", icon: "📰", link: "https://i.bltn.io/fellowship/FjE71l" },
-    { title: "GIVE", icon: "💵", link: "https://churchteams.com/m/Give.asp?oID=13823&aID=YUVxR1c3S2N2SlhoTHM2bmNxUmdqUkpxa1JRdkJyUzU%3D" },
-    { title: "MAKE A DECISION", icon: "💡", link: "https://churchteams.com/m/Register.asp?a=K0gvalZKS2tmbU09" },
-    { title: "CONNECT GROUPS", icon: "🤝", link: "#" },
-    { title: "PARTNERSHIP", icon: "🏠", link: "https://churchteams.com/m/Register.asp?a=NVNIVnFNWUs5Nlk9" },
-    { title: "EVENTS", icon: "📅", link: "#" },
-    { title: "MIDWEEK", icon: "🌙", link: "#" },
-    { title: "UPDATE INFO", icon: "🔄", link: "https://www.t2ll.com/auth/sms-redirect?phoneNumber=9728073070&msg=ME" },
-    { title: "SOCIAL MEDIA", icon: "📱", link: "#" }
+    { title: "I'M NEW", icon: <Sprout size={40} className="text-black" />, link: "https://churchteams.com/m/Register.asp?a=OExXKy9ZY3Vqamc9" },
+    { title: "DIGITAL BULLETIN", icon: <Newspaper size={40} className="text-black" />, link: "https://i.bltn.io/fellowship/FjE71l" },
+    { title: "GIVE", icon: <HandCoins size={40} className="text-black" />, link: "https://churchteams.com/m/Give.asp?oID=13823&aID=YUVxR1c3S2N2SlhoTHM2bmNxUmdqUkpxa1JRdkJyUzU%3D" },
+    { title: "MAKE A DECISION", icon: <Lightbulb size={40} className="text-black" />, link: "https://churchteams.com/m/Register.asp?a=K0gvalZKS2tmbU09" },
+    { title: "CONNECT GROUPS", icon: <Users size={40} className="text-black" />, link: "/connect" },
+    { title: "PARTNERSHIP", icon: <HeartHandshake size={40} className="text-black" />, link: "https://churchteams.com/m/Register.asp?a=NVNIVnFNWUs5Nlk9" },
+    { title: "EVENTS", icon: <Ticket size={40} className="text-black" />, link: "/events" },
+    { title: "MIDWEEK", icon: <Calendar size={40} className="text-black" />, link: "#" },
+    { title: "UPDATE INFO", icon: <RefreshCcw size={40} className="text-black" />, link: "https://www.t2ll.com/auth/sms-redirect?phoneNumber=9728073070&msg=ME" },
+    { title: "SOCIAL MEDIA", icon: <MonitorSmartphone size={40} className="text-black" />, link: "#" }
   ];
 
   return (
