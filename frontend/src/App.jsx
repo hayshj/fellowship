@@ -7,11 +7,14 @@ import HubCentral from './pages/HubCentral';
 import Live from './pages/Live'
 import About from './pages/About';
 import Events from './pages/Events';
+import ConnectGroups from './pages/connectGroups';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/plan-your-visit" element={<PlanYourVisit />} />
@@ -20,6 +23,7 @@ function App() {
         <Route path="/live" element={<Live />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/connect" element={<ConnectGroups />} />
       </Routes>
       <Footer />
     </>

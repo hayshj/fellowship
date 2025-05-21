@@ -9,11 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import Catm from "../assets/home/events/catm.jpg";
-import Ce from "../assets/home/events/ce.jpg";
-import Easter from "../assets/home/events/easter.jpg";
-import Mao from "../assets/home/events/mao.jpg";
-import Now from "../assets/home/events/now.jpg";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -86,17 +82,25 @@ function Home() {
         </h2>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-8">
-          <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1">
+          {/* Sunday Services Card */}
+          <Link
+            to="/plan-your-visit"
+            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
+          >
             <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg">
               <img src={Service} alt="Sunday Service" className="w-full h-full object-cover" />
             </div>
             <h3 className="text-2xl font-semibold mb-2">Sunday Services</h3>
             <p className="text-gray-700">
-              Join us every Sunday at 9AM and 11AM for worship, teaching, and community.
+              Join us every Sunday at 11AM for worship, teaching, and community.
             </p>
-          </div>
+          </Link>
 
-          <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1">
+          {/* Connect Groups Card */}
+          <Link
+            to="/connect"
+            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
+          >
             <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg bg-gray-300">
               <img src={ConnectGroups} alt="Connect Groups" className="w-full h-full object-cover" />
             </div>
@@ -104,8 +108,9 @@ function Home() {
             <p className="text-gray-700">
               Connect with others through connect groups that meet weekly across the city.
             </p>
-          </div>
+          </Link>
 
+          {/* Serve Card */}
           <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1">
             <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg">
               <img src={Serve} alt="Serve" className="w-full h-full object-cover" />
