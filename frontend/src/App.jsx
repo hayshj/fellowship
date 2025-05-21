@@ -7,7 +7,7 @@ import HubCentral from './pages/HubCentral';
 import Live from './pages/Live'
 import About from './pages/About';
 import Events from './pages/Events';
-import ConnectGroups from './pages/connectGroups';
+import ConnectGroups from './pages/ConnectGroups';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
