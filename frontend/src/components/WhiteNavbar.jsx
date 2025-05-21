@@ -41,7 +41,7 @@ function Navbar() {
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
-    setMenuOpen(false); // also close mobile menu if logo is tapped in mobile view
+    setMenuOpen(false);
   };
 
   return (
@@ -63,7 +63,7 @@ function Navbar() {
               className="relative text-lg group"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
@@ -100,12 +100,12 @@ function Navbar() {
               to={link}
               onClick={() => {
                 scrollToTop();
-                setMenuOpen(false); // close menu after clicking a mobile link
+                setMenuOpen(false);
               }}
               className="relative text-lg group text-left"
             >
               {['Home', 'Plan Your Visit', 'Sermons', 'Hub Central'][i]}
-              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-current transition-all duration-300 group-hover:w-full"></span>
             </Link>
           ))}
         </div>
