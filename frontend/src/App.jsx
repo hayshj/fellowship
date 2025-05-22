@@ -5,6 +5,7 @@ import PlanYourVisit from './pages/PlanYourVisit';
 import Sermons from './pages/Sermons';
 import HubCentral from './pages/HubCentral';
 import HubCentral2 from './pages/HubCentral2';
+import HubCentral3 from './pages/HubCentral3';
 import Live from './pages/Live'
 import About from './pages/About';
 import Events from './pages/Events';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/sermons" element={<Sermons />} />
         <Route path="/hub" element={<HubCentral />} />
         <Route path="/hub2" element={<HubCentral2 />} />
+        <Route path="/hub3" element={<HubCentral3 />} />
         <Route path="/live" element={<Live />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
