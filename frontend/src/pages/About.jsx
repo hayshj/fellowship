@@ -50,7 +50,7 @@ function About() {
             <HomeNavbar />
 
             {/* Hero Section */}
-            <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+            <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
                 <div className="max-w-5xl text-center">
                     <h1 className="text-6xl sm:text-8xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
                         ABOUT US

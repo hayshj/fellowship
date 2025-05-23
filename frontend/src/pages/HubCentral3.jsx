@@ -77,7 +77,7 @@ function HubCentral() {
         "We have wonderful midweek ministry opportunities on Wednesday nights. Check out what we have to offer.",
       buttonText: "Midweek",
       icon: <Calendar size={80} className="text-white" />,
-      link: "#",
+      link: "/midweek",
     },
     {
       title: "UPDATE INFO",
@@ -103,7 +103,7 @@ function HubCentral() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <div className="bg-black text-white min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
+      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
         <div className="max-w-5xl text-center">
           <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
             HUB CENTRAL
@@ -124,31 +124,31 @@ function HubCentral() {
 
         {/* Card Grid */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-            {cards.map((card, index) => (
-                <a
-                    key={index}
-                    href={card.link}
-                    className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between items-center text-center space-y-6 hover:shadow-lg transition duration-200 cursor-pointer"
-                >
-                    {/* Icon + Title Block */}
-                    <div className="bg-black text-white w-full aspect-[1/1] rounded-lg flex flex-col items-center justify-center px-3 text-center">
-                        <div className="mb-2">
-                            {card.icon}
-                        </div>
-                        <span className="text-xl font-bold leading-tight">{card.title}</span>
-                    </div>
+          {cards.map((card, index) => (
+            <a
+              key={index}
+              href={card.link}
+              className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between items-center text-center space-y-6 hover:shadow-lg transition duration-200 cursor-pointer"
+            >
+              {/* Icon + Title Block */}
+              <div className="bg-black text-white w-full aspect-[1/1] rounded-lg flex flex-col items-center justify-center px-3 text-center">
+                <div className="mb-2">{card.icon}</div>
+                <span className="text-xl font-bold leading-tight">
+                  {card.title}
+                </span>
+              </div>
 
-                    {/* Description */}
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                        {card.description}
-                    </p>
+              {/* Description */}
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {card.description}
+              </p>
 
-                    {/* Button (purely visual now, still inside the link) */}
-                    <div className="bg-black text-white px-5 py-3 text-sm font-semibold rounded-md hover:bg-gray-800 transition inline-block">
-                        {card.buttonText}
-                    </div>
-                </a>
-            ))}
+              {/* Button (visual only) */}
+              <div className="bg-black text-white px-5 py-3 text-sm font-semibold rounded-md hover:bg-gray-800 transition inline-block">
+                {card.buttonText}
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </div>

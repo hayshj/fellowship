@@ -10,6 +10,9 @@ import Live from './pages/Live'
 import About from './pages/About';
 import Events from './pages/Events';
 import ConnectGroups from './pages/ConnectGroups';
+import Serve from './pages/Serve';
+import ServeForm from './pages/ServeForm';
+import Midweek from './pages/Midweek';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -28,6 +31,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
         <Route path="/connect" element={<ConnectGroups />} />
+        <Route path="/serve" element={<Serve />} />
+        <Route path="/serve/form" element={<ServeForm />} />
+        <Route path="/midweek" element={<Midweek />} />
       </Routes>
       <Footer />
     </>

@@ -111,7 +111,10 @@ function Home() {
           </Link>
 
           {/* Serve Card */}
-          <div className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1">
+          <Link
+            to="/serve"
+            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
+          >
             <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg">
               <img src={Serve} alt="Serve" className="w-full h-full object-cover" />
             </div>
@@ -119,7 +122,7 @@ function Home() {
             <p className="text-gray-700">
               Discover opportunities to serve in our church and local community.
             </p>
-          </div>
+          </Link>
         </div>
       </div>
 

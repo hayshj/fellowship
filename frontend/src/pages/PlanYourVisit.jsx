@@ -1,9 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import HeroImage from "../assets/home/IMG_6942.jpg";
 import Online from "../assets/home/family1.avif";
 import HomeNavbar from "../components/HomeNavbar";
 
 function PlanYourVisit() {
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const iframe = iframeRef.current;
+    if (iframe) {
+      iframe.style.visibility = "hidden";
+      iframe.style.position = "absolute";
+      iframe.style.top = "-9999px";
+
+      const handleLoad = () => {
+        iframe.style.visibility = "visible";
+        iframe.style.position = "static";
+        iframe.style.top = "auto";
+      };
+
+      iframe.addEventListener("load", handleLoad);
+
+      return () => {
+        iframe.removeEventListener("load", handleLoad);
+      };
+    }
+  }, []);
+
   return (
     <div>
       {/* Navbar Section */}
@@ -17,7 +40,6 @@ function PlanYourVisit() {
           backgroundPosition: "top center",
         }}
       >
-        {/* Hero Text */}
         <div className="relative z-10 space-y-6 mt-32 md:mt-48 max-w-3xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
             Plan Your Visit
@@ -25,7 +47,7 @@ function PlanYourVisit() {
           <p className="text-base hidden md:block sm:text-lg text-gray-200 max-w-xl">
             We’re excited to welcome you to Fellowship Church. From where to park to what to expect, we want to make your first visit as smooth and enjoyable as possible.
           </p>
-          <button 
+          <button
             className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
             onClick={() => document.getElementById("what-to-expect").scrollIntoView({ behavior: "smooth" })}
           >
@@ -80,15 +102,15 @@ function PlanYourVisit() {
         </div>
       </div>
 
+      {/* Form Iframe */}
       <iframe
+        ref={iframeRef}
         src="https://churchteams.com/m/Register.asp?a=VEpjTTJzUmdyRU09"
         width="100%"
-        height="1350" // or whatever height fits the form
+        height="1350"
         style={{ border: "none", overflow: "hidden" }}
-        scrolling="no"
         title="Plan Your Visit"
       />
-
 
       {/* Online Church Section */}
       <div
