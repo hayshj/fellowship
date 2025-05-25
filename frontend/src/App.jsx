@@ -8,9 +8,13 @@ import Live from './pages/Live'
 import About from './pages/About';
 import Events from './pages/Events';
 import ConnectGroups from './pages/ConnectGroups';
+import Students from './pages/Students';
+import Children from './pages/Children';
+import MDO from './pages/MDO';
 import Serve from './pages/Serve';
 import ServeForm from './pages/ServeForm';
 import Midweek from './pages/Midweek';
+import Espanol from './pages/Espanol';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -30,6 +34,10 @@ function App() {
         <Route path="/serve" element={<Serve />} />
         <Route path="/serve/form" element={<ServeForm />} />
         <Route path="/midweek" element={<Midweek />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/children" element={<Children />} />
+        <Route path="/children/mdo" element={<MDO />} />
+        <Route path="/espanol" element={<Espanol />} />
       </Routes>
       <Footer />
     </>
