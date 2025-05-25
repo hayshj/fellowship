@@ -1,5 +1,5 @@
 import React from "react";
-import WhiteNavbar from "../components/WhiteNavbar";
+import HomeNavbar from "../components/HomeNavbar";
 import { GraduationCap, HeartHandshake, Music, Coffee, Sparkles, Globe, MonitorSmartphone, Baby } from "lucide-react";
 
 export default function ServeTeams() {
@@ -56,10 +56,21 @@ export default function ServeTeams() {
 
   return (
     <div className="bg-white text-black min-h-screen pb-12">
-      <WhiteNavbar />
+      <HomeNavbar />
+      
+      {/* Hero Section */}
+      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
+        <div className="max-w-5xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+            SERVE
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
+            JOIN OUR TEAM OF VOLUNTEERS
+          </p>
+        </div>
+      </div>
 
-      <div className="pt-32 px-6 md:px-12 lg:px-24">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">Serve Teams</h1>
+      <div className="py-16 px-6 md:px-12 lg:px-24">
         <p className="text-center max-w-2xl mx-auto text-lg text-gray-700 mb-12">
           At Fellowship Church, we believe everyone has a role to play. Whether you're great with kids, love technology, or just want to smile and greet people, there's a place for you to serve.
         </p>

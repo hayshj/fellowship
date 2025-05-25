@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import WhiteNavbar from "../components/WhiteNavbar";
+import HomeNavbar from "../components/HomeNavbar";
 import { Link } from "react-router-dom";
 
 function ConnectGroups() {
@@ -24,9 +24,19 @@ function ConnectGroups() {
 
   return (
     <>
-      <WhiteNavbar />
+      <HomeNavbar />
+      {/* Hero Section */}
+      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
+        <div className="max-w-5xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+            CONNECT
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
+            FIND YOUR PEOPLE, GROW TOGETHER
+          </p>
+        </div>
+      </div>
       <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black pt-[105px] min-h-screen">
-        <h1 className="text-4xl font-bold text-center mb-10">Connect Groups</h1>
 
         {loading ? (
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
