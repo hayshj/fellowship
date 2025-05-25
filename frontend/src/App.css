@@ -1,6 +1,7 @@
 @import "tailwindcss";
 .stroke-text {
-  /*-webkit-text-stroke: 2px white;*/
-  color: white;
+  color: black;
+  background-color: black;
+  text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff;
 }
   
