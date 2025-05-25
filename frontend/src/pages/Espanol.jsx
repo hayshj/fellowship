@@ -9,7 +9,7 @@ function Espanol() {
       {/* Hero Section */}
       <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4">
         <div className="max-w-5xl text-center">
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+          <h1 className="text-4xl md:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
             FELLOWSHIP
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
