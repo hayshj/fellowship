@@ -90,7 +90,10 @@ function Live() {
         <>
             <BlackNavbar />
             {isLive ? (
-                <div className="w-full h-screen bg-black flex items-center justify-center pt-[80px]">
+                <div 
+                    className="w-full bg-black flex items-center justify-center pt-[80px]"
+                    style={{ height: "100svh" }}
+                >
                     <div className="w-full h-full max-w-7xl aspect-video">
                         <iframe
                             className="w-full h-full"
