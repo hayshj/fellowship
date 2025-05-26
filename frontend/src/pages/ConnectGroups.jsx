@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import { Link } from "react-router-dom";
+import Connect from "../assets/connect.jpg";
 
 function ConnectGroups() {
   const [groups, setGroups] = useState([]);
@@ -26,9 +27,21 @@ function ConnectGroups() {
     <>
       <HomeNavbar />
       {/* Hero Section */}
-      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
-        <div className="max-w-5xl text-center">
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+      <div 
+        className="relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
+        style={{
+          backgroundImage: `url(${Connect})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-white mb-4">
             CONNECT
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">

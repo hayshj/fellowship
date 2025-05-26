@@ -51,29 +51,47 @@ function Home() {
 
       {/* Hero Section */}
       <div
-        className="relative w-full bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6 md:justify-start md:text-left min-h-[500px]"
-        style={{ 
-          backgroundImage: `url(${HeroImage})`, 
-          height: "100svh"
+        className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white px-6"
+        style={{
+          backgroundImage: `url(${HeroImage})`,
         }}
       >
-        {/* Hero Text */}
-        <div className="relative z-10 space-y-6 mt-32 md:mt-48 ">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-            Welcome to Fellowship Church
-          </h1>
-          <p className="text-base hidden md:block sm:text-lg text-gray-200 max-w-xl">
-            A place where faith grows, community thrives, and lives are changed.
-            Join us this Sunday and experience authentic worship and teaching.
+        {/* Overlay (optional for contrast) */}
+        <div className="absolute inset-0 bg-black/10 z-0"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 text-center space-y-6">
+          <p className="text-2xl sm:text-3xl tracking-widest text-white uppercase">
+            Welcome to
           </p>
-          <button 
-            className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
-            onClick={() => window.location.href = "/plan-your-visit"}
-          >
-            Plan Your Visit
-          </button>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase">
+            Fellowship Church
+          </h1>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+  <Link
+    to="/plan-your-visit"
+    className="w-42 text-center bg-white hover:bg-neutral-100 text-black font-semibold px-6 py-3 rounded transition"
+  >
+    Plan Your Visit
+  </Link>
+  <Link
+    to="/live"
+    className="w-42 text-center border border-white text-white font-semibold px-6 py-3 rounded hover:bg-white hover:text-black transition"
+  >
+    Watch Live
+  </Link>
+</div>
+
+
+          {/* Optional subtext 
+          <div className="pt-6 text-xs sm:text-sm text-white/80 space-y-1 tracking-wide leading-relaxed">
+            <p>SERVICES AT 11AM SUNDAYS</p>
+          </div>*/}
         </div>
       </div>
+
 
       {/* Cards Section */}
       <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black">

@@ -1,5 +1,6 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
+import ChildrenImage from "../assets/children.jpg"; // Assuming you have an image for the background
 
 function Children() {
   return (
@@ -8,9 +9,21 @@ function Children() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4">
-        <div className="max-w-5xl text-center">
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+      <div 
+        className="relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
+        style={{
+          backgroundImage: `url(${ChildrenImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-white mb-4">
             KIDS
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
@@ -18,6 +31,7 @@ function Children() {
           </p>
         </div>
       </div>
+
 
       {/* Info Section */}
       <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-neutral-800 space-y-16">
