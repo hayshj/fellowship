@@ -107,7 +107,7 @@ function Live() {
                 </div>
             ) : (
                 <div 
-                    className="w-full min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 text-center"
+                    className="w-full bg-black text-white flex flex-col items-center justify-center px-4 text-center"
                     style={{ height: "100svh" }}
                 >
                     <div className="max-w-xl">
