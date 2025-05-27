@@ -161,27 +161,29 @@ function Sermons() {
             </div>
 
             {/* Pagination */}
-            {!isSearching && (
+            {!isSearching && totalPages > 1 && (
               <div className="mt-12 flex justify-center items-center gap-4">
-                <button
-                  onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-                  disabled={page === 1}
-                  className="p-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
+                {page > 1 && (
+                  <button
+                    onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                    className="p-2 rounded bg-gray-200 hover:bg-gray-300"
+                  >
+                    <ChevronLeft className="w-5 h-5" />
+                  </button>
+                )}
 
                 <span className="text-lg font-medium">
                   Page {page} of {totalPages}
                 </span>
 
-                <button
-                  onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-                  disabled={page === totalPages}
-                  className="p-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
+                {page < totalPages && (
+                  <button
+                    onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                    className="p-2 rounded bg-gray-200 hover:bg-gray-300"
+                  >
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                )}
               </div>
             )}
           </>
