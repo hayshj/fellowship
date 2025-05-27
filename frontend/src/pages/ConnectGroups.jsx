@@ -24,7 +24,7 @@ function ConnectGroups() {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen">
       <HomeNavbar />
       {/* Hero Section */}
       <div 
@@ -49,7 +49,7 @@ function ConnectGroups() {
           </p>
         </div>
       </div>
-      <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black pt-[105px] min-h-screen">
+      <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black pt-[105px]">
 
         {loading ? (
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -74,17 +74,9 @@ function ConnectGroups() {
             {groups.map((group, index) => (
               <div
                 key={index}
-                className="flex flex-col bg-white rounded-2xl shadow overflow-hidden pb-6"
+                className="flex flex-col bg-white rounded-2xl shadow p-6"
               >
-                <div className="aspect-video w-full">
-                  <img
-                    className="w-full h-full object-cover aspect-[16/9]"
-                    src={group.image || "https://via.placeholder.com/500"}
-                    alt={group.name}
-                  />
-                </div>
-
-                <div className="p-5 text-center flex-1">
+                <div className="text-center flex-1">
                   <h2 className="text-xl font-bold text-black uppercase mb-2">{group.name}</h2>
                   <p className="text-sm text-neutral-800 mb-1 font-medium">{group.location}</p>
                   <p className="text-sm text-neutral-600">
@@ -99,7 +91,7 @@ function ConnectGroups() {
                     href={group.registerLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-black text-white w-11/12 mx-auto py-3 px-6 text-center text-sm font-semibold rounded-md hover:bg-neutral-900 transition"
+                    className="mt-6 bg-black text-white w-full py-3 px-6 text-center text-sm font-semibold rounded-md hover:bg-neutral-900 transition"
                   >
                     Register
                   </a>
@@ -109,7 +101,7 @@ function ConnectGroups() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
