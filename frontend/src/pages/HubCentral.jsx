@@ -29,7 +29,7 @@ function HubCentral() {
         "Click the button to get signed up for our weekly digital bulletin. Click here for today’s bulletin. (Only works on mobile devices)",
       buttonText: "Get Bulletin",
       icon: <Newspaper size={80} className="text-white" />,
-      link: "https://i.bltn.io/fellowship/FjE71l",
+      link: "https://bl.tn/fellowship",
     },
     {
       title: "GIVE",
