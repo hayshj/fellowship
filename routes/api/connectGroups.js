@@ -22,6 +22,7 @@ router.get('/', async (req, res) => {
       const time = $(el).find('.ginfo span:contains("Time of day:")').next('.av').text().trim();
       const location = $(el).find('.ginfo span:contains("Location:")').next('.av').text().trim();
       const startDate = $(el).find('.ginfo span:contains("Start Date:")').next('.av').text().trim();
+      const topic = $(el).find('.ginfo span:contains("Topic:")').next('.av').text().trim();
 
       const registerLink = $(el).find('a[title="Register"]').attr('href');
       const fullRegisterLink = registerLink && !registerLink.startsWith('https://') ? baseUrl + registerLink : registerLink;
@@ -38,6 +39,7 @@ router.get('/', async (req, res) => {
         startDate,
         registerLink: fullRegisterLink,
         image: fullImageUrl,
+        topic,
       });
     });
 
