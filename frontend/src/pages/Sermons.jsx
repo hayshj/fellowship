@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import HeroImage from "../assets/home/IMG_6971-2.jpg";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Sermons() {
   const [sermons, setSermons] = useState([]);
@@ -165,19 +166,21 @@ function Sermons() {
                 <button
                   onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
                   disabled={page === 1}
-                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                  className="p-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
                 >
-                  Previous
+                  <ChevronLeft className="w-5 h-5" />
                 </button>
+
                 <span className="text-lg font-medium">
                   Page {page} of {totalPages}
                 </span>
+
                 <button
                   onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
                   disabled={page === totalPages}
-                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                  className="p-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
                 >
-                  Next
+                  <ChevronRight className="w-5 h-5" />
                 </button>
               </div>
             )}
