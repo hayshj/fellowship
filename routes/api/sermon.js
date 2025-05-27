@@ -7,15 +7,30 @@ const Sermon = require('../../models/Sermon');
 const router = express.Router();
 
 // Get all sermons in descending order
+// GET /api/sermon?page=1&limit=6
 router.get('/', async (req, res) => {
-    try{
-        const sermons = await Sermon.find().sort({ date: -1 });
-        res.json(sermons);
+    try {
+        const page = parseInt(req.query.page) || 1;
+        const limit = parseInt(req.query.limit) || 6;
+
+        const skip = (page - 1) * limit;
+
+        const [sermons, total] = await Promise.all([
+            Sermon.find().sort({ date: -1 }).skip(skip).limit(limit),
+            Sermon.countDocuments()
+        ]);
+
+        res.json({
+            sermons,
+            total,
+            page,
+            totalPages: Math.ceil(total / limit)
+        });
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Failed to fetch sermons' });
     }
-})
+});
 
 // Create a new sermons
 router.post('/', async(req, res) => {
@@ -70,5 +85,14 @@ router.get('/latest', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch latest sermon' });
     }
 });
+
+router.get('/all', async (req, res) => {
+    try {
+      const sermons = await Sermon.find().sort({ date: -1 });
+      res.json(sermons);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch all sermons' });
+    }
+});  
 
 module.exports = router;
