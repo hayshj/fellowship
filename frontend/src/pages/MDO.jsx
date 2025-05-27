@@ -1,5 +1,6 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
+import ChildrenImage from "../assets/childrensmain.jpg"; // Assuming you have an image for the background
 
 function MDO() {
   return (
@@ -7,23 +8,27 @@ function MDO() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4">
-        <div className="max-w-5xl text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
+      <div 
+        className="relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
+        style={{
+          backgroundImage: `url(${ChildrenImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Overlay for readability */}
+        <div className="absolute inset-0 bg-black/30 z-0"></div>
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-7xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-white mb-4">
             MOTHER'S DAY OUT
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
             A LOVING, CHRIST-CENTERED PROGRAM FOR AGES 18 MO – PRE-K
           </p>
         </div>
-      </div>
-
-      {/* Registration Notice */}
-      <div className="bg-yellow-100 text-yellow-900 py-10 px-6 md:px-16 text-center">
-        <h2 className="text-2xl font-bold mb-4">Register for Mother’s Day Out</h2>
-        <p className="max-w-3xl mx-auto">
-          Thank you for your interest in joining us at Fellowship MDO! Registration opens to the public on <strong>Tuesday, March 4th at 10 AM</strong>. Use the link that corresponds with your child’s age as of <strong>September 1st, 2025</strong>.
-        </p>
       </div>
 
       {/* Age Group Info */}
