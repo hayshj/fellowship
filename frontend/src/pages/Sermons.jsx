@@ -4,20 +4,21 @@ import HeroImage from "../assets/home/IMG_6971-2.jpg";
 
 function Sermons() {
   const [sermons, setSermons] = useState([]);
+  const [allSermons, setAllSermons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
+  // Fetch paginated sermons for normal display
   useEffect(() => {
     const fetchSermons = async () => {
+      setLoading(true);
       try {
-        const response = await fetch("/api/sermon");
+        const response = await fetch(`/api/sermon?page=${page}&limit=6`);
         const data = await response.json();
-        if (Array.isArray(data)) {
-          setSermons(data);
-        } else {
-          setSermons([]);
-          console.error("Unexpected response format:", data);
-        }
+        setSermons(data.sermons);
+        setTotalPages(data.totalPages || 1);
       } catch (error) {
         console.error("Failed to fetch sermons:", error);
         setSermons([]);
@@ -27,14 +28,35 @@ function Sermons() {
     };
 
     fetchSermons();
+  }, [page]);
+
+  // Fetch all sermons for search
+  useEffect(() => {
+    const fetchAllSermons = async () => {
+      try {
+        const response = await fetch("/api/sermon/all");
+        const data = await response.json();
+        if (Array.isArray(data)) {
+          setAllSermons(data);
+        }
+      } catch (error) {
+        console.error("Failed to fetch all sermons:", error);
+      }
+    };
+
+    fetchAllSermons();
   }, []);
 
-  const filteredSermons = sermons.filter((sermon) =>
-    [sermon.title, sermon.speaker, sermon.scripture]
-      .join(" ")
-      .toLowerCase()
-      .includes(searchQuery.toLowerCase())
-  );
+  const isSearching = searchQuery.trim().length > 0;
+
+  const filteredSermons = isSearching
+    ? allSermons.filter((sermon) =>
+        [sermon.title, sermon.speaker, sermon.scripture]
+          .join(" ")
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase())
+      )
+    : sermons;
 
   return (
     <div>
@@ -78,63 +100,88 @@ function Sermons() {
         {loading ? (
           <p className="text-center text-gray-500">Loading sermons...</p>
         ) : (
-          <div className="grid gap-10 px-6 md:px-12 lg:px-24 md:grid-cols-2 lg:grid-cols-3">
-            {filteredSermons.map((sermon) => (
-              <div
-                key={sermon._id}
-                className="flex flex-col bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
-              >
-                {sermon.videoLink ? (
-                  <div className="aspect-video w-full">
-                    <iframe
-                      className="w-full h-full"
-                      src={sermon.videoLink.replace("watch?v=", "embed/")}
-                      title={sermon.title}
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                ) : (
-                  <div className="aspect-video bg-gray-300 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-12 h-12 text-gray-500"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 6v6l4 2M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"
-                      />
-                    </svg>
-                  </div>
-                )}
+          <>
+            <div className="grid gap-10 px-6 md:px-12 lg:px-24 md:grid-cols-2 lg:grid-cols-3">
+              {filteredSermons.map((sermon) => (
+                <div
+                  key={sermon._id}
+                  className="flex flex-col bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden"
+                >
+                  {sermon.videoLink ? (
+                    <div className="aspect-video w-full">
+                      <iframe
+                        className="w-full h-full"
+                        src={sermon.videoLink.replace("watch?v=", "embed/")}
+                        title={sermon.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  ) : (
+                    <div className="aspect-video bg-gray-300 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-12 h-12 text-gray-500"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12 6v6l4 2M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z"
+                        />
+                      </svg>
+                    </div>
+                  )}
 
-                <div className="p-5 text-center">
-                  <h2 className="text-xl font-bold text-black uppercase mb-2">{sermon.title}</h2>
-                  <p className="text-sm text-neutral-800 mb-1 font-medium">{sermon.scripture}</p>
-                  <p className="text-sm text-neutral-600">{sermon.speaker}</p>
-                  <p className="text-sm text-neutral-600">
-                    {new Date(sermon.date).toLocaleDateString("en-US", {
-                      timeZone: "UTC",
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
+                  <div className="p-5 text-center">
+                    <h2 className="text-xl font-bold text-black uppercase mb-2">{sermon.title}</h2>
+                    <p className="text-sm text-neutral-800 mb-1 font-medium">{sermon.scripture}</p>
+                    <p className="text-sm text-neutral-600">{sermon.speaker}</p>
+                    <p className="text-sm text-neutral-600">
+                      {new Date(sermon.date).toLocaleDateString("en-US", {
+                        timeZone: "UTC",
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </p>
+                  </div>
                 </div>
+              ))}
+              {filteredSermons.length === 0 && (
+                <p className="col-span-full text-center text-gray-500">
+                  No sermons match your search.
+                </p>
+              )}
+            </div>
+
+            {/* Pagination */}
+            {!isSearching && (
+              <div className="mt-12 flex justify-center items-center gap-4">
+                <button
+                  onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+                  disabled={page === 1}
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                >
+                  Previous
+                </button>
+                <span className="text-lg font-medium">
+                  Page {page} of {totalPages}
+                </span>
+                <button
+                  onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+                  disabled={page === totalPages}
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                >
+                  Next
+                </button>
               </div>
-            ))}
-            {filteredSermons.length === 0 && (
-              <p className="col-span-full text-center text-gray-500">
-                No sermons match your search.
-              </p>
             )}
-          </div>
+          </>
         )}
       </div>
     </div>

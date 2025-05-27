@@ -78,7 +78,7 @@ function Home() {
   </Link>
   <Link
     to="/live"
-    className="w-42 text-center border border-white text-white font-semibold px-6 py-3 rounded hover:bg-white hover:text-black transition"
+    className="w-42 text-center border border-white text-white font-semibold px-6 py-3 rounded hover:bg-neutral-100 hover:text-black transition"
   >
     Watch Live
   </Link>
