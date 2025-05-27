@@ -78,11 +78,11 @@ function ConnectGroups() {
               >
                 <div className="text-center flex-1">
                   <h2 className="text-xl font-bold text-black uppercase mb-2">{group.name}</h2>
+                  <p className="text-sm text-neutral-900 mb-1 font-medium">{group.topic}</p>
                   <p className="text-sm text-neutral-800 mb-1 font-medium">{group.location}</p>
                   <p className="text-sm text-neutral-600">
                     {group.day} {group.time && group.time !== "Not Applicable" ? ` ${group.time}` : ""}
                   </p>
-                  <p className="text-sm text-neutral-600 mt-2">{group.topic}</p>
                   <p className="text-sm text-neutral-600 mt-2">{group.description}</p>
                 </div>
 
