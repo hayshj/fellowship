@@ -161,7 +161,7 @@ function Sermons() {
             </div>
 
             {/* Pagination */}
-            {!isSearching && totalPages > 1 && (
+            {!isSearching && (
               <div className="mt-12 flex justify-center items-center gap-4">
                 {page > 1 && (
                   <button
