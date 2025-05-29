@@ -10,6 +10,7 @@ function Sermons() {
   const [searchQuery, setSearchQuery] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [latestLink, setLatestLink] = useState("");
 
   // Fetch paginated sermons for normal display
   useEffect(() => {
@@ -48,6 +49,19 @@ function Sermons() {
     fetchAllSermons();
   }, []);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await fetch("/api/sermon/latest");
+        if (!res.ok) throw new Error("no latest");
+        const { videoLink } = await res.json();
+        setLatestLink(videoLink);
+      } catch (err) {
+        console.warn("Could not load latest sermon", err);
+      }
+    })();
+  }, []);
+
   const isSearching = searchQuery.trim().length > 0;
 
   const filteredSermons = isSearching
@@ -73,9 +87,14 @@ function Sermons() {
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
               Explore our latest sermons and teaching series. Whether you missed a Sunday or want to revisit a message, everything is here to help you grow in faith and understanding.
             </p>
-            <button className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+            <a
+              href={latestLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
+            >
               Watch the Latest Sermon
-            </button>
+            </a>
           </div>
         </div>
         <div className="hidden lg:block absolute top-0 right-0 h-full max-w-[30%]">
