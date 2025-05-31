@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import HeroImage from "../assets/home/IMG_6971-2.jpg";
+import HeroImage from "../assets/sermons.jpg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Sermons() {
@@ -78,13 +78,13 @@ function Sermons() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <div className="h-screen bg-[#121212] relative text-white">
-        <div className="h-full flex items-center justify-start px-6 md:px-12 lg:pl-16 lg:pr-[35%]">
+      <div className="hidden lg:block h-screen bg-[rgb(18,18,18)] relative text-white">
+        <div className="h-full flex items-center justify-center md:justify-start px-6 md:px-12 lg:pl-16 lg:pr-[35%]">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Sermons & Messages
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
+            <p className="hidden md:block text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto md:mx-0">
               Explore our latest sermons and teaching series. Whether you missed a Sunday or want to revisit a message, everything is here to help you grow in faith and understanding.
             </p>
             <a
@@ -99,6 +99,35 @@ function Sermons() {
         </div>
         <div className="hidden lg:block absolute top-0 right-0 h-full max-w-[30%]">
           <img src={HeroImage} alt="Web Hero" className="h-full w-full object-cover" />
+        </div>
+      </div>
+
+      {/* Mobile Hero Section */}
+      <div 
+        className="relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
+        style={{
+          backgroundImage: `url(${HeroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Overlay for readability 
+        <div className="absolute inset-0 bg-black/30 z-0"></div>*/}
+
+        {/* Hero Content */}
+        <div className="relative z-10 max-w-5xl text-center">
+          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-white mb-4">
+            Sermons
+          </h1>
+          <a
+              href={latestLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
+            >
+              Watch the Latest Sermon
+            </a>
         </div>
       </div>
 
