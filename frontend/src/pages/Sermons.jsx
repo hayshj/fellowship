@@ -104,7 +104,7 @@ function Sermons() {
 
       {/* Mobile Hero Section */}
       <div 
-        className="relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
+        className="lg:hidden relative bg-black/20 text-white py-24 flex flex-col items-center justify-center text-center px-4"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundSize: 'cover',
