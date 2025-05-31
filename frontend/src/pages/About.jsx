@@ -102,6 +102,7 @@ function About() {
                         { name: 'Chad Hays', title: 'Lead Pastor', email: 'chays@fbrc.org', image: ChadHays },
                         { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jhays@fbrc.org', image: JeffHays },
                         { name: 'Kevin Jones', title: 'Small Groups and Missions Pastor', email: 'kjones@fbrc.org', image: KevinJones },
+                        { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'rbradley@fbrc.org', image: '/staff/ryan.jpg' },
                         { name: 'Kaitlin Faggard', title: 'Preschool and MDO Director', email: 'kfaggard@fbrc.org', image: KaitlinFaggard },
                         { name: 'Lauren Moore', title: "Children's Coordinator", email: 'lauren@fbrc.org', image: LaurenMoore },
                         { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org', image: '/staff/jenna.jpg' },
