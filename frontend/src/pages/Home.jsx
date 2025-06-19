@@ -21,14 +21,24 @@ function Home() {
       try {
         const response = await fetch('/api/events');
         const data = await response.json();
-        setEvents(data);
+  
+        // Filter only upcoming events
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // normalize time
+  
+        const futureEvents = data.filter(event => {
+          const startDate = new Date(event.startDate);
+          return startDate >= today;
+        });
+  
+        setEvents(futureEvents);
       } catch (error) {
         console.error("Error fetching events:", error);
       }
     };
-
+  
     fetchEvents();
-  }, []);
+  }, []);  
 
   useEffect(() => {
     const fetchLatestSermon = async () => {
