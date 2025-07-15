@@ -23,6 +23,7 @@ function Home() {
         const data = await response.json();
   
         // Filter only upcoming events
+        /*
         const today = new Date();
         today.setHours(0, 0, 0, 0); // normalize time
   
@@ -30,8 +31,9 @@ function Home() {
           const startDate = new Date(event.startDate);
           return startDate >= today;
         });
+        */
   
-        setEvents(futureEvents);
+        setEvents(data);
       } catch (error) {
         console.error("Error fetching events:", error);
       }
