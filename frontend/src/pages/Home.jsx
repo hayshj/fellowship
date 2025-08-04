@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeroImage from "../assets/home/IMG_6780.jpg";
+import HeroImage from "../assets/home/BO5A7112.jpg";
 import HomeNavbar from "../components/HomeNavbar";
 import Service from "../assets/home/IMG_6942.jpg";
 import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.jpg";
@@ -90,7 +90,7 @@ function Home() {
             </Link>
             <Link
               to="/live"
-              className="w-42 text-center border border-white text-white font-semibold px-6 py-3 rounded hover:bg-neutral-100 hover:text-black transition"
+              className="w-42 text-center bg-white hover:bg-neutral-100 text-black font-semibold px-6 py-3 rounded transition"
             >
               Watch Live
             </Link>
