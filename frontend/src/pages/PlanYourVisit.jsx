@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import HeroImage from "../assets/home/IMG_6942.jpg";
-import Online from "../assets/home/family1.avif";
+import HeroImage from "../assets/home/IMG_6942.webp";
+import Online from "../assets/home/family1.webp";
 import HomeNavbar from "../components/HomeNavbar";
 
 function PlanYourVisit() {

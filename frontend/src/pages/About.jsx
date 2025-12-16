@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import HomeNavbar from '../components/HomeNavbar';
-import ChadHays from '../assets/about/chadhays.jpg';
-import JeffHays from '../assets/about/jeffhays.jpg';
-import KevinJones from '../assets/about/kevinjones.jpg';
-import KaitlinFaggard from '../assets/about/KF.jpg';
-import LaurenMoore from '../assets/about/LM.jpg';
-import Church from '../assets/about/hero.jpg';
+import ChadHays from '../assets/about/chadhays.webp';
+import JeffHays from '../assets/about/jeffhays.webp';
+import KevinJones from '../assets/about/kevinjones.webp';
+import KaitlinFaggard from '../assets/about/KF.webp';
+import LaurenMoore from '../assets/about/LM.webp';
+import Church from '../assets/about/hero.webp';
 
 function About() {
     const [openIndex, setOpenIndex] = useState(null);
