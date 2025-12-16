@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import HeroImage from "../assets/home/BO5A7112.jpg";
+import HeroImage from "../assets/home/BO5A7112.webp";
 import HomeNavbar from "../components/HomeNavbar";
-import Service from "../assets/home/IMG_6942.jpg";
-import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.jpg";
-import Serve from "../assets/home/serve.jpg";
+import Service from "../assets/home/IMG_6942.webp";
+import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.webp";
+import Serve from "../assets/home/serve.webp";
 import Online from "../assets/home/family1.avif";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
