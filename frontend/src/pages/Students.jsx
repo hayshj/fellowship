@@ -1,18 +1,18 @@
 import React from "react";
 import { useEffect, useRef } from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import StudentsImage from "../assets/students/students.jpg";
-import StudentWorship from "../assets/students/studentworship.jpg";
-import InstagramImage from "../assets/students/instagram.jpg";
-import ProfilePic from "../assets/students/profile.jpg";
-import Gallery1 from "../assets/students/gallery1.jpg";
-import Gallery2 from "../assets/students/gallery2.jpg";
-import Gallery3 from "../assets/students/gallery3.jpg";
-import Gallery4 from "../assets/students/gallery4.jpg";
-import Gallery5 from "../assets/students/gallery5.jpg";
-import Gallery6 from "../assets/students/gallery6.jpg";
-import Gallery7 from "../assets/students/gallery7.jpg";
-import Gallery8 from "../assets/students/gallery8.jpg";
+import StudentsImage from "../assets/students/hero.webp";
+import StudentWorship from "../assets/students/studentworship.webp";
+import InstagramImage from "../assets/students/instagram.webp";
+import ProfilePic from "../assets/students/profile.webp";
+import Gallery1 from "../assets/students/gallery1.webp";
+import Gallery2 from "../assets/students/gallery2.webp";
+import Gallery3 from "../assets/students/gallery3.webp";
+import Gallery4 from "../assets/students/gallery4.webp";
+import Gallery5 from "../assets/students/gallery5.webp";
+import Gallery6 from "../assets/students/gallery6.webp";
+import Gallery7 from "../assets/students/gallery7.webp";
+import Gallery8 from "../assets/students/gallery8.webp";
 
 import { Ellipsis, Heart, MessageCircle, Instagram } from "lucide-react";
 
