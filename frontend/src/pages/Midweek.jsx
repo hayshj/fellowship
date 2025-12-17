@@ -1,6 +1,6 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import Mdwk from "../assets/mdwk.jpg";
+import Mdwk from "../assets/mdwk.webp";
 
 function Midweek() {
   const cards = [

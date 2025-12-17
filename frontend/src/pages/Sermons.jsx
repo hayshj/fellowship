@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import HeroImage from "../assets/sermons.jpg";
+import HeroImage from "../assets/sermons.webp";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function Sermons() {

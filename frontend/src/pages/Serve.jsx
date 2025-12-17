@@ -1,7 +1,7 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import { GraduationCap, HeartHandshake, Music, Coffee, Sparkles, Globe, MonitorSmartphone, Baby } from "lucide-react";
-import Serve from "../assets/soundboard.jpg";
+import Serve from "../assets/soundboard.webp";
 
 export default function ServeTeams() {
   const teams = [

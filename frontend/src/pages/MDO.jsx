@@ -1,6 +1,6 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import ChildrenImage from "../assets/childrensmain.jpg"; // Assuming you have an image for the background
+import ChildrenImage from "../assets/childrensmain.webp"; // Assuming you have an image for the background
 
 function MDO() {
   return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import { Link } from "react-router-dom";
-import Connect from "../assets/connect.jpg";
+import Connect from "../assets/connect.webp";
 
 function ConnectGroups() {
   const [groups, setGroups] = useState([]);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import { Link } from "react-router-dom";  // Import Link from react-router-dom
-import Event from "../assets/event.jpg";  // Import the event hero image
+import Event from "../assets/event.webp";  // Import the event hero image
 
 function Events() {
   const [events, setEvents] = useState([]);
