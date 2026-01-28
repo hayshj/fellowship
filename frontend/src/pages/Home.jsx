@@ -223,7 +223,7 @@ function Home2() {
               {events.map((event, index) => (
                 <SwiperSlide key={index}>
                   <a href={event.registerLink} target="_blank" rel="noopener noreferrer" className="block group">
-                    <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
+                    <div className="relative rounded-2xl overflow-hidden aspect-video shadow-2xl">
                       <img
                         src={event.image}
                         alt={event.name}
