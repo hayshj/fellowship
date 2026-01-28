@@ -227,19 +227,8 @@ function Home2() {
                       <img
                         src={event.image}
                         alt={event.name}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-
-                      <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                          <h3 className="text-xl font-bold text-white line-clamp-2">{event.name}</h3>
-                          <div className="flex items-center gap-2 mt-2 text-sm text-neutral-300">
-                            <Calendar className="w-4 h-4 text-orange-400" />
-                            <span>{new Date(event.startDate).toLocaleDateString()}</span>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </a>
                 </SwiperSlide>
