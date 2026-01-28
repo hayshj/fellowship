@@ -3,44 +3,65 @@ import { Facebook, Instagram, Youtube } from 'lucide-react';
 
 function Footer() {
   return (
-    <footer className="bg-[#121212] text-gray-300 py-12 px-6 md:px-12 lg:px-24">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Logo + Tagline */}
-        <div>
-          <h3 className="text-2xl font-bold text-white">Fellowship Church</h3>
-          <p className="mt-2 text-sm text-gray-400">A place where faith and community grow together.</p>
-        </div>
-
-        {/* Navigation Links */}
-        <div className="flex flex-col gap-2">
-          <h4 className="text-lg font-semibold text-white mb-2">Quick Links</h4>
-          <a href="#" className="hover:text-white transition">Home</a>
-          <a href="#" className="hover:text-white transition">Plan Your Visit</a>
-          <a href="#" className="hover:text-white transition">Watch Online</a>
-          <a href="#" className="hover:text-white transition">Give</a>
-        </div>
-
-        {/* Social + Contact */}
-        <div className="flex flex-col gap-2">
-          <h4 className="text-lg font-semibold text-white mb-2">Connect</h4>
-          <div className="flex space-x-4 mb-2">
-            <a href="https://www.facebook.com/fellowshiprc/" aria-label="Facebook" className="hover:text-white">
-              <Facebook size={20} />
+    <footer className="bg-neutral-950 text-neutral-400 py-16 px-6 md:px-12 lg:px-24 border-t border-neutral-900">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        {/* Brand Section */}
+        <div className="space-y-6">
+          <h3 className="text-3xl font-black text-white tracking-tighter">FELLOWSHIP<br /><span className="text-neutral-500">CHURCH</span></h3>
+          <p className="text-sm leading-relaxed max-w-xs">
+            A community of believers dedicated to spreading the love and message of Jesus Christ. Join us this Sunday.
+          </p>
+          <div className="flex gap-4">
+            <a href="https://www.facebook.com/fellowshiprc/" aria-label="Facebook" className="p-2 bg-neutral-900 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              <Facebook size={18} />
             </a>
-            <a href="https://www.instagram.com/fellowshipchurchrc/" aria-label="Instagram" className="hover:text-white">
-              <Instagram size={20} />
+            <a href="https://www.instagram.com/fellowshipchurchrc/" aria-label="Instagram" className="p-2 bg-neutral-900 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              <Instagram size={18} />
             </a>
-            <a href="https://www.youtube.com/@FellowshipRC" aria-label="YouTube" className="hover:text-white">
-              <Youtube size={20} />
+            <a href="https://www.youtube.com/@FellowshipRC" aria-label="YouTube" className="p-2 bg-neutral-900 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+              <Youtube size={18} />
             </a>
           </div>
-          <p className="text-sm text-gray-400">900 Pullen St, Royse City, TX</p>
-          <p className="text-sm text-gray-400">info@fbrc.org</p>
         </div>
+
+        {/* Quick Links */}
+        <div>
+          <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Explore</h4>
+          <ul className="space-y-3 text-sm">
+            <li><a href="/" className="hover:text-white transition-colors">Home</a></li>
+            <li><a href="/plan-your-visit" className="hover:text-white transition-colors">Plan Your Visit</a></li>
+            <li><a href="/sermons" className="hover:text-white transition-colors">Watch Online</a></li>
+            <li><a href="/give" className="hover:text-white transition-colors">Give</a></li>
+            <li><a href="/about" className="hover:text-white transition-colors">About Us</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h4 className="text-white font-bold uppercase tracking-widest text-sm mb-6">Visit Us</h4>
+          <ul className="space-y-4 text-sm">
+            <li className="flex flex-col">
+              <span className="font-semibold text-white">Royse City Campus</span>
+              <span>900 Pullen St</span>
+              <span>Royse City, TX 75189</span>
+            </li>
+            <li className="flex flex-col">
+              <span className="font-semibold text-white">Contact</span>
+              <a href="mailto:info@fbrc.org" className="hover:text-white transition-colors">info@fbrc.org</a>
+              <a href="tel:9726369114" className="hover:text-white transition-colors">(972) 636-9114</a>
+            </li>
+          </ul>
+        </div>
+
+
       </div>
 
-      <div className="mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} Fellowship Church. All rights reserved.
+      <div className="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600">
+        <p>© {new Date().getFullYear()} Fellowship Church. All rights reserved.</p>
+        <div className="flex gap-6">
+          <a href="/privacy" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
+          <a href="/terms" className="hover:text-neutral-400 transition-colors">Terms of Service</a>
+        </div>
       </div>
     </footer>
   );

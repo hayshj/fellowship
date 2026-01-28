@@ -18,8 +18,7 @@ const SermonSchema = new mongoose.Schema({
     },
     videoLink: {
         type: String,
-        required: true
-    }
+        default: ""}
 }, {
     timestamps: true
 });

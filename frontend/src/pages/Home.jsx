@@ -8,10 +8,10 @@ import Online from "../assets/home/family1.webp";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay, Navigation } from 'swiper/modules';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, PlayCircle, Calendar, Heart, Globe, ArrowRight } from 'lucide-react';
 import { Link } from "react-router-dom";
 
-function Home() {
+function Home2() {
 
   const [latestSermon, setLatestSermon] = useState(null);
   const [events, setEvents] = useState([]);
@@ -21,26 +21,14 @@ function Home() {
       try {
         const response = await fetch('/api/events');
         const data = await response.json();
-  
-        // Filter only upcoming events
-        /*
-        const today = new Date();
-        today.setHours(0, 0, 0, 0); // normalize time
-  
-        const futureEvents = data.filter(event => {
-          const startDate = new Date(event.startDate);
-          return startDate >= today;
-        });
-        */
-  
         setEvents(data);
       } catch (error) {
         console.error("Error fetching events:", error);
       }
     };
-  
+
     fetchEvents();
-  }, []);  
+  }, []);
 
   useEffect(() => {
     const fetchLatestSermon = async () => {
@@ -52,167 +40,169 @@ function Home() {
         console.error("Error fetching latest sermon:", error);
       }
     };
-  
+
     fetchLatestSermon();
   }, []);
 
   return (
-    <div>
+    <div className="font-sans antialiased bg-stone-50 text-gray-900">
       {/* Navbar Section */}
       <HomeNavbar />
 
       {/* Hero Section */}
-      <div
-        className="relative w-full h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center text-white px-6"
-        style={{
-          backgroundImage: `url(${HeroImage})`,
-        }}
-      >
-        {/* Overlay (optional for contrast) */}
-        <div className="absolute inset-0 bg-black/10 z-0"></div>
+      <header className="relative w-full h-screen overflow-hidden group">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 group-hover:scale-105"
+          style={{
+            backgroundImage: `url(${HeroImage})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70"></div>
+        </div>
 
-        {/* Hero Content */}
-        <div className="relative z-10 text-center space-y-6">
-          <p className="text-2xl sm:text-3xl tracking-widest text-white uppercase">
-            Welcome to
-          </p>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6 space-y-8 animate-fade-in-up">
+          <div className="space-y-4">
+            <span className="inline-block py-1 px-3 border border-white/30 rounded-full text-xs md:text-sm font-medium tracking-widest text-white/90 uppercase backdrop-blur-sm">
+              Welcome Home
+            </span>
+            <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-tighter drop-shadow-2xl">
+              FELLOWSHIP<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">CHURCH</span>
+            </h1>
+          </div>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase">
-            Fellowship Church
-          </h1>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <Link
               to="/plan-your-visit"
-              className="w-42 text-center bg-white hover:bg-neutral-100 text-black font-semibold px-6 py-3 rounded transition"
+              className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-wider overflow-hidden rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
-              Plan Your Visit
+              <span className="relative z-10 flex items-center gap-2">Plan Your Visit <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" /></span>
+              <div className="absolute inset-0 bg-neutral-200 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
             </Link>
             <Link
               to="/live"
-              className="w-42 text-center bg-white hover:bg-neutral-100 text-black font-semibold px-6 py-3 rounded transition"
+              className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
             >
               Watch Live
             </Link>
           </div>
-
-
-          {/* Optional subtext 
-          <div className="pt-6 text-xs sm:text-sm text-white/80 space-y-1 tracking-wide leading-relaxed">
-            <p>SERVICES AT 11AM SUNDAYS</p>
-          </div>*/}
         </div>
-      </div>
+      </header>
 
 
-      {/* Cards Section */}
-      <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-black">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Connect With Us
-        </h2>
-
-        <div className="flex flex-col gap-8 lg:flex-row lg:justify-between lg:gap-8">
-          {/* Sunday Services Card */}
-          <Link
-            to="/plan-your-visit"
-            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
-          >
-            <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg">
-              <img src={Service} alt="Sunday Service" className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-2xl font-semibold mb-2">Sunday Services</h3>
-            <p className="text-gray-700">
-              Join us every Sunday at 11AM for worship, teaching, and community.
-            </p>
-          </Link>
-
-          {/* Connect Groups Card */}
-          <Link
-            to="/connect"
-            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
-          >
-            <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg bg-gray-300">
-              <img src={ConnectGroups} alt="Connect Groups" className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-2xl font-semibold mb-2">Connect Groups</h3>
-            <p className="text-gray-700">
-              Connect with others through connect groups that meet weekly across the city.
-            </p>
-          </Link>
-
-          {/* Serve Card */}
-          <Link
-            to="/serve"
-            className="bg-gray-100 p-6 rounded-xl shadow-lg flex flex-col transition hover:-translate-y-1 hover:shadow-xl group flex-1"
-          >
-            <div className="aspect-[4/3] w-full mb-4 overflow-hidden rounded-lg">
-              <img src={Serve} alt="Serve" className="w-full h-full object-cover" />
-            </div>
-            <h3 className="text-2xl font-semibold mb-2">Serve</h3>
-            <p className="text-gray-700">
-              Discover opportunities to serve in our church and local community.
-            </p>
-          </Link>
-        </div>
-      </div>
-
-      {/* Online Church Section */}
-      <div
-        className="relative w-full h-[60vh] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white text-center px-6"
-        style={{ backgroundImage: `url(${Online})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30 z-0"></div>
-        <div className="relative z-10 max-w-2xl space-y-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            Join Us Online
-          </h2>
-          <p className="text-base sm:text-lg text-gray-200">
-            Can’t make it in person? Experience our Sunday services live from anywhere.
-          </p>
-          <button
-            className="px-6 py-3 bg-white text-black font-semibold rounded hover:bg-gray-200 transition"
-            onClick={() => window.location.href = "/live"}
-          >
-            Watch Online
-          </button>
-        </div>
-      </div>
-
-      {/* Events Section */}
-      <div className="py-16 px-4 sm:px-6 md:px-12 lg:px-24 bg-neutral-800 text-white overflow-hidden">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-          What's Happening at Fellowship Church
-        </h2>
-
-        <div className="relative w-full">
-          {/* Chevron Left */}
-          <div className="absolute inset-y-0 left-0 flex items-center z-10">
-            <button
-              ref={(el) => (window.prevEl = el)}
-              className="text-white text-3xl md:text-4xl p-2 sm:p-3 md:p-4 transition-transform"
-            >
-              <ChevronLeft className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
-            </button>
+      {/* Cards Section - Creative Layout */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">Get Involved</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900">Connect With Us</h3>
+            <div className="w-24 h-1 bg-orange-500 mx-auto mt-6 rounded-full"></div>
           </div>
 
-          {/* Chevron Right */}
-          <div className="absolute inset-y-0 right-0 flex items-center z-10">
-            <button
-              ref={(el) => (window.nextEl = el)}
-              className="text-white text-3xl md:text-4xl p-2 sm:p-3 md:p-4 transition-transform"
-            >
-              <ChevronRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
-            </button>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Sunday Services Card */}
+            <Link to="/plan-your-visit" className="group relative h-[500px] overflow-hidden rounded-3xl cursor-pointer">
+              <img src={Service} alt="Sunday Service" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mb-4 text-white">
+                  <Calendar className="w-6 h-6" />
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Sunday Services</h3>
+                <p className="text-gray-300 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">
+                  Join us every Sunday at 11AM for worship, teaching, and community.
+                </p>
+                <span className="text-orange-300 font-bold tracking-wide text-sm uppercase flex items-center gap-2">Learn More <ArrowRight className="w-4 h-4" /></span>
+              </div>
+            </Link>
+
+            {/* Connect Groups Card */}
+            <Link to="/connect" className="group relative h-[500px] overflow-hidden rounded-3xl cursor-pointer lg:mt-12">
+              <img src={ConnectGroups} alt="Connect Groups" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mb-4 text-white">
+                  <Heart className="w-6 h-6" />
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Connect Groups</h3>
+                <p className="text-gray-300 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">
+                  Connect with others through connect groups that meet weekly across the city.
+                </p>
+                <span className="text-blue-300 font-bold tracking-wide text-sm uppercase flex items-center gap-2">Find a Group <ArrowRight className="w-4 h-4" /></span>
+              </div>
+            </Link>
+
+            {/* Serve Card */}
+            <Link to="/serve" className="group relative h-[500px] overflow-hidden rounded-3xl cursor-pointer">
+              <img src={Serve} alt="Serve" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-300"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4 text-white">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Serve</h3>
+                <p className="text-gray-300 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 line-clamp-2">
+                  Discover opportunities to serve in our church and local community.
+                </p>
+                <span className="text-green-300 font-bold tracking-wide text-sm uppercase flex items-center gap-2">Get Involved <ArrowRight className="w-4 h-4" /></span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Online Church Section - Modern Split */}
+      <section className="relative w-full py-0">
+        <div className="flex flex-col md:flex-row h-[70vh] md:h-[60vh]">
+          <div className="w-full md:w-1/2 relative overflow-hidden">
+            <img src={Online} alt="Online Church" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-neutral-900/20"></div>
+          </div>
+          <div className="w-full md:w-1/2 bg-neutral-900 text-white flex items-center justify-center p-12 lg:p-24 relative overflow-hidden">
+            <div className="max-w-xl z-10">
+              <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-none">JOIN US<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">ONLINE</span></h2>
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed">
+                Can’t make it in person? No problem. Experience our Sunday services live from anywhere in the world.
+              </p>
+              <button
+                className="group flex items-center gap-4 text-xl font-bold border-b-2 border-white pb-2 hover:text-blue-400 hover:border-blue-400 transition-all"
+                onClick={() => window.location.href = "/live"}
+              >
+                Watch Live Stream <ArrowRight className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" />
+              </button>
+            </div>
+            {/* Decorative background element */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Events Section - Dark Themed */}
+      <section className="py-24 bg-neutral-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-neutral-900 z-10"></div>
+
+        <div className="container mx-auto px-6 relative z-20">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 px-6">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold mb-2">Happening Soon</h2>
+              <p className="text-neutral-400 text-lg">Mark your calendars for these upcoming events.</p>
+            </div>
+            <div className="flex gap-4 mt-8 md:mt-0">
+              <button ref={(el) => (window.prevEl = el)} className="p-4 rounded-full border border-neutral-700 hover:bg-white hover:text-black transition-all">
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button ref={(el) => (window.nextEl = el)} className="p-4 rounded-full border border-neutral-700 hover:bg-white hover:text-black transition-all">
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
           </div>
 
-          {/* Swiper Carousel */}
-          <div className="w-full pl-12 pr-12 sm:pl-16 sm:pr-16">
+          <div className="w-full px-2">
             <Swiper
               modules={[Autoplay, Navigation]}
-              spaceBetween={16}
+              spaceBetween={24}
               slidesPerView={1}
               loop={true}
-              autoplay={{ delay: 3000 }}
+              autoplay={{ delay: 3500, disableOnInteraction: false }}
               navigation={{
                 prevEl: window.prevEl,
                 nextEl: window.nextEl
@@ -224,81 +214,98 @@ function Home() {
                 swiper.navigation.update();
               }}
               breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                },
-                1024: {
-                  slidesPerView: 3,
-                }
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 3.5 },
               }}
-              className="w-full"
+              className="w-full !pb-12"
             >
               {events.map((event, index) => (
                 <SwiperSlide key={index}>
-                  <a href={event.registerLink} target="_blank" rel="noopener noreferrer">
-                    <div className="rounded-xl aspect-[16/9] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out">
+                  <a href={event.registerLink} target="_blank" rel="noopener noreferrer" className="block group">
+                    <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-2xl">
                       <img
                         src={event.image}
                         alt={event.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+
+                      <div className="absolute bottom-0 left-0 p-6 w-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <div className="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                          <h3 className="text-xl font-bold text-white line-clamp-2">{event.name}</h3>
+                          <div className="flex items-center gap-2 mt-2 text-sm text-neutral-300">
+                            <Calendar className="w-4 h-4 text-orange-400" />
+                            <span>{new Date(event.startDate).toLocaleDateString()}</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </a>
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
-        </div>
-        {/* All Events Button */}
-        <div className="flex justify-center mt-10">
-          <button 
-            className="border border-white px-6 py-2 rounded hover:bg-white hover:text-black transition"
-            onClick={() => window.location.href = "/events"}
-          >
-            All Events
-          </button>
-        </div>
-      </div>
 
-      {/* Sermon Section */}
-      <section className="py-16 px-6 md:px-12 lg:px-24 bg-neutral-200">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Left Text Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <p className="text-neutral-500 text-lg mb-2">This Week's Message</p>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              {latestSermon?.title || "Loading..."}
-            </h2>
-            <p className="text-lg text-neutral-500 font-semibold mb-1">
-              {latestSermon?.scripture || ""}
-            </p>
-            <p className="text-lg text-neutral-500 font-semibold mb-6">
-              {latestSermon?.speaker || ""}
-            </p>
-            <button 
-              onClick={() => window.location.href = "/sermons"}
-              className="border border-black px-6 py-2 rounded hover:bg-black hover:text-white transition font-semibold"
-            >
-              ALL MESSAGES
-            </button>
+          <div className="flex justify-center mt-8">
+            <Link to="/events" className="text-sm font-bold tracking-widest text-neutral-400 hover:text-white uppercase transition-colors border-b border-transparent hover:border-white pb-1">
+              View All Calendar Events
+            </Link>
           </div>
+        </div>
+      </section>
 
-          {/* Right YouTube Embed */}
-          <div className="flex-1 w-full aspect-video max-w-2xl rounded-xl overflow-hidden shadow-lg">
-            {latestSermon?.videoLink ? (
-              <iframe
-                className="w-full h-full"
-                src={latestSermon.videoLink.replace("watch?v=", "embed/")}
-                title="This Week's Message"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <div className="w-full h-full flex items-center justify-center text-gray-500">
-                Loading video...
+      {/* Sermon Section - Minimalist */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-stone-100">
+        <div className="max-w-7xl mx-auto bg-white rounded-[3rem] p-8 md:p-12 lg:p-16 shadow-xl relative overflow-hidden">
+          {/* Decorative bg */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gray-50 rounded-full -mr-32 -mt-32 z-0"></div>
+
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div className="flex-1 space-y-8 text-center lg:text-left">
+              <div>
+                <span className="text-orange-600 font-bold tracking-widest text-xs uppercase bg-orange-100 px-3 py-1 rounded-full">Latest Message</span>
+                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mt-4 leading-tight">
+                  {latestSermon?.title || "Loading..."}
+                </h2>
               </div>
-            )}
+
+              <div className="space-y-2">
+                <div className="flex items-center justify-center lg:justify-start gap-4 text-gray-600">
+                  <span className="font-semibold">{latestSermon?.speaker || ""}</span>
+                  <span className="w-1.5 h-1.5 bg-gray-300 rounded-full"></span>
+                  <span>{latestSermon?.scripture || ""}</span>
+                </div>
+              </div>
+
+              <Link
+                to="/sermons"
+                className="inline-flex items-center justify-center px-8 py-3 bg-black text-white rounded-full font-bold hover:bg-neutral-800 transition shadow-lg hover:shadow-xl"
+              >
+                Browse All Messages
+              </Link>
+            </div>
+
+            <div className="flex-1 w-full relative">
+              <div className="rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video relative group">
+                {latestSermon?.videoLink ? (
+                  <iframe
+                    className="w-full h-full"
+                    src={latestSermon.videoLink.replace("watch?v=", "embed/")}
+                    title="This Week's Message"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-gray-500">
+                    Loading video...
+                  </div>
+                )}
+              </div>
+              {/* Shadow element */}
+              <div className="absolute -bottom-6 -right-6 w-full h-full bg-neutral-200 rounded-2xl -z-10"></div>
+            </div>
           </div>
         </div>
       </section>
@@ -306,4 +313,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Home2;
