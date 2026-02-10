@@ -127,7 +127,7 @@ function About() {
             <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">Our History</h2>
-                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Out Story</h3>
+                    <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Story</h3>
                     <div className="w-24 h-1 bg-orange-500 mx-auto mb-12 rounded-full"></div>
 
                     <div className="space-y-8 text-lg md:text-xl text-gray-600 leading-relaxed">
