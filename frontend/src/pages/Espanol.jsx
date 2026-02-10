@@ -19,7 +19,7 @@ function Espanol() {
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-tighter">
             FELLOWSHIP<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">ESPAÑOL</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">ESPAÑOL</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
             Una comunidad de fe, esperanza y amor para toda la familia.

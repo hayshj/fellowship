@@ -115,7 +115,7 @@ function About() {
                         Who We Are
                     </span>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">
-                        ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">US</span>
+                        ABOUT <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">US</span>
                     </h1>
                     <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
                         Learn more about our mission, our values, and the people who serve our community.

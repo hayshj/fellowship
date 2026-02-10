@@ -66,7 +66,7 @@ function Home2() {
               Welcome Home
             </span>
             <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-tighter drop-shadow-2xl">
-              FELLOWSHIP<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">CHURCH</span>
+              FELLOWSHIP<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">CHURCH</span>
             </h1>
           </div>
 
@@ -159,7 +159,7 @@ function Home2() {
           </div>
           <div className="w-full md:w-1/2 bg-neutral-900 text-white flex items-center justify-center p-12 lg:p-24 relative overflow-hidden">
             <div className="max-w-xl z-10">
-              <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-none">JOIN US<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">ONLINE</span></h2>
+              <h2 className="text-5xl lg:text-7xl font-black mb-6 leading-none">JOIN US<br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 pr-2">ONLINE</span></h2>
               <p className="text-xl text-gray-400 mb-10 leading-relaxed">
                 Can’t make it in person? No problem. Experience our Sunday services live from anywhere in the world.
               </p>
@@ -293,7 +293,7 @@ function Home2() {
                 )}
               </div>
               {/* Shadow element */}
-              <div className="absolute -bottom-6 -right-6 w-full h-full bg-neutral-200 rounded-2xl -z-10"></div>
+              <div className="absolute -bottom-3 -right-3 md:-bottom-6 md:-right-6 w-full h-full bg-neutral-200 rounded-2xl -z-10"></div>
             </div>
           </div>
         </div>

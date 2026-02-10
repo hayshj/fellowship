@@ -68,7 +68,7 @@ function Students() {
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">
             FELLOWSHIP<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300">STUDENTS</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 pr-2">STUDENTS</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
             Where 6th–12th graders find purpose, community, and a place to belong.

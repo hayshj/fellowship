@@ -89,7 +89,7 @@ function Sermons() {
               </span>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-none">
                 SERMONS & <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-200">MESSAGES</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-200 pr-2">MESSAGES</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-400 max-w-xl mx-auto md:mx-0 leading-relaxed font-light">
                 Explore our latest sermons and teaching series. Revisit a message and continue to grow in your faith throughout the week.

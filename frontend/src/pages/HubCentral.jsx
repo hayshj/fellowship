@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import HomeNavbar from "../components/HomeNavbar";
 import {
   Sprout,
@@ -113,7 +114,7 @@ function HubCentral() {
         "Connect with us on social media to see what's happening in the life of our church.",
       buttonText: "Follow Us",
       icon: <MonitorSmartphone className="w-8 h-8 text-pink-500" />,
-      link: "#",
+      link: "/social",
       bgFrom: "from-pink-50",
       bgTo: "to-pink-100/50"
     },
@@ -135,7 +136,7 @@ function HubCentral() {
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-tighter">
             HUB<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-purple-200">CENTRAL</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-purple-200 pr-2">CENTRAL</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
             The one place to get connected.
@@ -155,10 +156,9 @@ function HubCentral() {
         <div className="max-w-7xl mx-auto">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {cards.map((card, index) => (
-              <a
+              <div
                 key={index}
-                href={card.link}
-                className="group relative bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
               >
                 {/* Subtle Gradient Background on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${card.bgFrom} ${card.bgTo} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
@@ -167,9 +167,6 @@ function HubCentral() {
                   <div className="mb-6 flex items-start justify-between">
                     <div className="w-16 h-16 bg-stone-50 rounded-2xl flex items-center justify-center border border-stone-100 group-hover:scale-110 transition-transform duration-300 group-hover:bg-white group-hover:shadow-sm">
                       {card.icon}
-                    </div>
-                    <div className="p-2 bg-stone-50 rounded-full text-stone-300 group-hover:text-stone-400 transition-colors">
-                      <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
                     </div>
                   </div>
 
@@ -181,13 +178,27 @@ function HubCentral() {
                     {card.description}
                   </p>
 
-                  <div>
-                    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-900 border-b-2 border-transparent group-hover:border-black transition-all pb-1">
-                      {card.buttonText}
-                    </span>
+                  <div className="mt-auto">
+                    {card.link.startsWith('/') ? (
+                      <Link
+                        to={card.link}
+                        className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white transition-all duration-300 bg-neutral-900 rounded-xl hover:bg-orange-500 hover:shadow-lg group-hover:translate-y-0"
+                      >
+                        {card.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    ) : (
+                      <a
+                        href={card.link}
+                        target={card.link.startsWith('#') ? "_self" : "_blank"}
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white transition-all duration-300 bg-neutral-900 rounded-xl hover:bg-orange-500 hover:shadow-lg group-hover:translate-y-0"
+                      >
+                        {card.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    )}
                   </div>
                 </div>
-              </a>
+              </div>
             ))}
           </div>
         </div>

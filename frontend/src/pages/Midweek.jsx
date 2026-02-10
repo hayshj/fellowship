@@ -72,7 +72,7 @@ function Midweek() {
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">
             WEDNESDAY<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">NIGHTS</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">NIGHTS</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
             Refuel mid-week with fellowship, food, and faith for the whole family.

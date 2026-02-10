@@ -49,7 +49,7 @@ function PlanYourVisit() {
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tighter mb-8 max-w-4xl">
             PLAN YOUR<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100">VISIT</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">VISIT</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed mb-10">
             We’re excited to welcome you to Fellowship Church. We want to make your first visit as smooth and enjoyable as possible.

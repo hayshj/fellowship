@@ -44,7 +44,7 @@ function ConnectGroups() {
             Community
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">
-            CONNECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-100">GROUPS</span>
+            CONNECT <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-100 pr-2">GROUPS</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
             Find your people, grow together, and experience life-changing community.
