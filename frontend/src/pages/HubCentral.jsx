@@ -11,6 +11,8 @@ import {
   Calendar,
   RefreshCcw,
   MonitorSmartphone,
+  ArrowRight,
+  Link as LinkIcon
 } from "lucide-react";
 
 function HubCentral() {
@@ -18,139 +20,178 @@ function HubCentral() {
     {
       title: "I'M NEW",
       description:
-        "We would love to get to know you and give you more info about Fellowship. Click the link to fill out our digital connection card and we will have a gift waiting for you at the end of the service.",
+        "We would love to get to know you! Fill out our digital connection card and we'll have a gift waiting for you at the end of the service.",
       buttonText: "I'm New",
-      icon: <Sprout size={80} className="text-white" />,
+      icon: <Sprout className="w-8 h-8 text-green-500" />,
       link: "https://churchteams.com/m/Register.asp?a=OExXKy9ZY3Vqamc9",
+      bgFrom: "from-green-50",
+      bgTo: "to-green-100/50"
     },
     {
       title: "DIGITAL BULLETIN",
       description:
-        "Click the button to get signed up for our weekly digital bulletin. Click here for today’s bulletin. (Only works on mobile devices)",
+        "Get signed up for our weekly digital bulletin or view today's edition on your mobile device.",
       buttonText: "Get Bulletin",
-      icon: <Newspaper size={80} className="text-white" />,
+      icon: <Newspaper className="w-8 h-8 text-blue-500" />,
       link: "https://bl.tn/fellowship",
+      bgFrom: "from-blue-50",
+      bgTo: "to-blue-100/50"
     },
     {
       title: "GIVE",
       description:
-        "The ministries of Fellowship Church are made possible by the generosity of those that give. Find out how you can set up automatically recurring or one-time contributions.",
+        "The ministries of Fellowship Church are made possible by your generosity. Set up recurring or one-time contributions.",
       buttonText: "Give Now",
-      icon: <HandCoins size={80} className="text-white" />,
+      icon: <HandCoins className="w-8 h-8 text-amber-500" />,
       link: "https://churchteams.com/m/Give.asp?oID=13823&aID=YUVxR1c3S2N2SlhoTHM2bmNxUmdqUkpxa1JRdkJyUzU%3D",
+      bgFrom: "from-amber-50",
+      bgTo: "to-amber-100/50"
     },
     {
       title: "MAKE A DECISION",
       description:
-        "If you are making a decision to move your faith forward, we would love to help you. Let us know what decision you are making and we will have one of our pastors follow up with you.",
+        "Ready to move your faith forward? Let us know what decision you are making and we'll follow up with you.",
       buttonText: "Make a Decision",
-      icon: <Lightbulb size={80} className="text-white" />,
+      icon: <Lightbulb className="w-8 h-8 text-yellow-500" />,
       link: "https://churchteams.com/m/Register.asp?a=K0gvalZKS2tmbU09",
+      bgFrom: "from-yellow-50",
+      bgTo: "to-yellow-100/50"
     },
     {
       title: "CONNECT GROUPS",
       description:
-        "Connect Groups are one of the most important things we do at Fellowship Church. Try a few groups and find one that fits your family.",
+        "Connect Groups are vital to life at Fellowship. Find a group that fits your schedule and stage of life.",
       buttonText: "Find a Group",
-      icon: <Users size={80} className="text-white" />,
+      icon: <Users className="w-8 h-8 text-purple-500" />,
       link: "/connect",
+      bgFrom: "from-purple-50",
+      bgTo: "to-purple-100/50"
     },
     {
       title: "PARTNERSHIP",
       description:
-        "Sign up today and learn how you can partner with Fellowship Church and make this your church home.",
+        "Learn how you can partner with Fellowship Church and make this your church home.",
       buttonText: "Partnership",
-      icon: <HeartHandshake size={80} className="text-white" />,
+      icon: <HeartHandshake className="w-8 h-8 text-red-500" />,
       link: "https://churchteams.com/m/Register.asp?a=NVNIVnFNWUs5Nlk9",
+      bgFrom: "from-red-50",
+      bgTo: "to-red-100/50"
     },
     {
       title: "EVENTS",
       description:
-        "Need to register for an event? Find all the info you need to register for upcoming events at Fellowship.",
-      buttonText: "Events",
-      icon: <Ticket size={80} className="text-white" />,
+        "Find all the info you need to register for upcoming events at Fellowship.",
+      buttonText: "View Events",
+      icon: <Ticket className="w-8 h-8 text-cyan-500" />,
       link: "/events",
+      bgFrom: "from-cyan-50",
+      bgTo: "to-cyan-100/50"
     },
     {
       title: "MIDWEEK",
       description:
-        "We have wonderful midweek ministry opportunities on Wednesday nights. Check out what we have to offer.",
-      buttonText: "Midweek",
-      icon: <Calendar size={80} className="text-white" />,
+        "We have wonderful midweek ministry opportunities on Wednesday nights for the whole family.",
+      buttonText: "Midweek Info",
+      icon: <Calendar className="w-8 h-8 text-orange-500" />,
       link: "/midweek",
+      bgFrom: "from-orange-50",
+      bgTo: "to-orange-100/50"
     },
     {
       title: "UPDATE INFO",
       description:
-        "Has any of your contact information changed? Do you have a new address, phone number or email? Only works when using a mobile device.",
+        "Has your contact info changed? Update your address, phone number or email. (Mobile only)",
       buttonText: "Update Info",
-      icon: <RefreshCcw size={80} className="text-white" />,
+      icon: <RefreshCcw className="w-8 h-8 text-indigo-500" />,
       link: "https://www.t2ll.com/auth/sms-redirect?phoneNumber=9728073070&msg=ME",
+      bgFrom: "from-indigo-50",
+      bgTo: "to-indigo-100/50"
     },
     {
       title: "SOCIAL MEDIA",
       description:
-        "Connect with us on social media. Click the button to get see all of our available social media platforms.",
-      buttonText: "Social Media",
-      icon: <MonitorSmartphone size={80} className="text-white" />,
+        "Connect with us on social media to see what's happening in the life of our church.",
+      buttonText: "Follow Us",
+      icon: <MonitorSmartphone className="w-8 h-8 text-pink-500" />,
       link: "#",
+      bgFrom: "from-pink-50",
+      bgTo: "to-pink-100/50"
     },
   ];
 
   return (
-    <div>
-      {/* Navbar Section */}
+    <div className="font-sans antialiased bg-stone-50 text-gray-900 min-h-screen">
       <HomeNavbar />
 
-      {/* Hero Section */}
-      <div className="bg-black text-white py-24 flex flex-col items-center justify-center text-center px-4 relative">
-        <div className="max-w-5xl text-center">
-          <h1 className="text-6xl sm:text-6xl lg:text-9xl font-extrabold tracking-tight text-transparent stroke-text mb-4">
-            HUB CENTRAL
+      {/* Hero Section - Dark Gradient Background */}
+      <header className="bg-neutral-900 py-32 px-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
+        <div className="max-w-5xl z-10 space-y-6 animate-fade-in-up">
+          <span className="inline-block py-1 px-3 border border-white/20 rounded-full text-xs md:text-sm font-medium tracking-widest text-neutral-400 uppercase backdrop-blur-sm">
+            Next Steps
+          </span>
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-black text-white tracking-tighter">
+            HUB<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-purple-200">CENTRAL</span>
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold italic">
-            THE ONE PLACE TO GET CONNECTED
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
+            The one place to get connected.
           </p>
         </div>
+      </header>
+
+      {/* Intro */}
+      <div className="bg-white py-12 px-6 text-center border-b border-stone-100">
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Welcome to Fellowship Church Hub Central. This is your starting point to find information, get connected, and move your faith forward.
+        </p>
       </div>
 
-      {/* Content Section */}
-      <div className="py-16 px-6 md:px-12 lg:px-24 bg-white text-neutral-700">
-        <h2 className="text-lg md:text-2xl mb-12 text-center">
-          Welcome to Fellowship Church Hub Central. This is the place to get all
-          the information you need to get connected and start moving your faith
-          forward with Fellowship Church.
-        </h2>
+      {/* Card Grid */}
+      <section className="py-16 px-6 md:px-12 lg:px-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {cards.map((card, index) => (
+              <a
+                key={index}
+                href={card.link}
+                className="group relative bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              >
+                {/* Subtle Gradient Background on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.bgFrom} ${card.bgTo} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
 
-        {/* Card Grid */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card, index) => (
-            <a
-              key={index}
-              href={card.link}
-              className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between items-center text-center space-y-6 hover:shadow-lg transition duration-200 cursor-pointer"
-            >
-              {/* Icon + Title Block */}
-              <div className="bg-black text-white w-full aspect-[1/1] rounded-lg flex flex-col items-center justify-center px-3 text-center">
-                <div className="mb-2">{card.icon}</div>
-                <span className="text-xl font-bold leading-tight">
-                  {card.title}
-                </span>
-              </div>
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="mb-6 flex items-start justify-between">
+                    <div className="w-16 h-16 bg-stone-50 rounded-2xl flex items-center justify-center border border-stone-100 group-hover:scale-110 transition-transform duration-300 group-hover:bg-white group-hover:shadow-sm">
+                      {card.icon}
+                    </div>
+                    <div className="p-2 bg-stone-50 rounded-full text-stone-300 group-hover:text-stone-400 transition-colors">
+                      <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                    </div>
+                  </div>
 
-              {/* Description */}
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {card.description}
-              </p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-black transition-colors">
+                    {card.title}
+                  </h3>
 
-              {/* Button (visual only) */}
-              <div className="bg-black text-white px-5 py-3 text-sm font-semibold rounded-md hover:bg-gray-800 transition inline-block">
-                {card.buttonText}
-              </div>
-            </a>
-          ))}
+                  <p className="text-gray-500 text-sm leading-relaxed mb-8 flex-grow group-hover:text-gray-700 transition-colors">
+                    {card.description}
+                  </p>
+
+                  <div>
+                    <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-900 border-b-2 border-transparent group-hover:border-black transition-all pb-1">
+                      {card.buttonText}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
