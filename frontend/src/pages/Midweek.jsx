@@ -132,22 +132,6 @@ function Midweek() {
           </div>
         </div>
       </section>
-
-      {/* Footer CTA */}
-      <section className="py-24 bg-stone-900 text-white text-center px-6">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="text-4xl md:text-5xl font-bold">See you this Wednesday!</h2>
-          <p className="text-stone-400 text-lg">
-            Have questions about where to go? Plan your visit and we'll help you find your way.
-          </p>
-          <a
-            href="/plan-your-visit"
-            className="inline-block bg-white text-black font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105"
-          >
-            Plan Your Visit
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
