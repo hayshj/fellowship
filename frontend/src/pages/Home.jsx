@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeroImage from "../assets/home/BO5A7112.webp";
+import HeroImage from "../assets/home/IMG_6780.webp";
 import HomeNavbar from "../components/HomeNavbar";
 import Service from "../assets/home/IMG_6942.webp";
 import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.webp";
@@ -57,7 +57,7 @@ function Home2() {
             backgroundImage: `url(${HeroImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6 space-y-8 animate-fade-in-up">
@@ -152,8 +152,8 @@ function Home2() {
 
       {/* Online Church Section - Modern Split */}
       <section className="relative w-full py-0">
-        <div className="flex flex-col md:flex-row h-[70vh] md:h-[60vh]">
-          <div className="w-full md:w-1/2 relative overflow-hidden">
+        <div className="flex flex-col md:flex-row h-auto md:h-[60vh]">
+          <div className="w-full md:w-1/2 relative overflow-hidden h-80 md:h-auto">
             <img src={Online} alt="Online Church" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0 bg-neutral-900/20"></div>
           </div>
