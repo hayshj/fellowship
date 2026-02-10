@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import HomeNavbar from '../components/HomeNavbar';
-import ChadHays from '../assets/about/chadhays.webp';
-import JeffHays from '../assets/about/jeffhays.webp';
-import KevinJones from '../assets/about/kevinjones.webp';
-import KaitlinFaggard from '../assets/about/KF.webp';
-import LaurenMoore from '../assets/about/LM.webp';
 import Church from '../assets/about/hero.webp';
-import { Users, BookOpen, Heart, Star, HandHeart, Lightbulb, Shield, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react';
+import { Users, BookOpen, Heart, Star, HandHeart, Lightbulb, Shield, ChevronDown, ChevronUp, ArrowRight, Mail } from 'lucide-react';
 
 function About() {
     const [openIndex, setOpenIndex] = useState(null);
@@ -81,13 +76,13 @@ function About() {
     ];
 
     const staffMembers = [
-        { name: 'Chad Hays', title: 'Lead Pastor', email: 'chays@fbrc.org', image: ChadHays },
-        { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jhays@fbrc.org', image: JeffHays },
-        { name: 'Kevin Jones', title: 'Small Groups', email: 'kjones@fbrc.org', image: KevinJones },
-        { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'rbradley@fbrc.org', image: '/staff/ryan.jpg' },
-        { name: 'Kaitlin Faggard', title: 'Preschool Director', email: 'kfaggard@fbrc.org', image: KaitlinFaggard },
-        { name: 'Lauren Moore', title: "Children's Coordinator", email: 'lauren@fbrc.org', image: LaurenMoore },
-        { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org', image: '/staff/jenna.jpg' },
+        { name: 'Chad Hays', title: 'Lead Pastor', email: 'chays@fbrc.org' },
+        { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jhays@fbrc.org' },
+        { name: 'Kevin Jones', title: 'Small Groups', email: 'kjones@fbrc.org' },
+        { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'rbradley@fbrc.org' },
+        { name: 'Kaitlin Faggard', title: 'Preschool Director', email: 'kfaggard@fbrc.org' },
+        { name: 'Lauren Moore', title: "Children's Coordinator", email: 'lauren@fbrc.org' },
+        { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org' },
     ];
 
     const toggleBelief = (index) => {
@@ -155,27 +150,21 @@ function About() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {staffMembers.map((staff, index) => (
-                            <div key={index} className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                                <div className="aspect-[3/4] overflow-hidden relative">
-                                    <img
-                                        src={staff.image}
-                                        alt={`${staff.name}'s profile`}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        onError={(e) => { e.target.src = 'https://via.placeholder.com/400x600?text=No+Image'; }}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
-                                    <div className="absolute bottom-0 left-0 p-6 w-full translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                        <h3 className="text-2xl font-bold text-white mb-1">{staff.name}</h3>
-                                        <p className="text-orange-200 font-medium mb-4">{staff.title}</p>
-                                    </div>
+                            <div key={index} className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+
+                                <div className="mb-6">
+                                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-black transition-colors">{staff.name}</h3>
+                                    <p className="text-orange-600 font-medium tracking-wide uppercase text-sm mt-1">{staff.title}</p>
                                 </div>
-                                <div className="p-6 border-t border-gray-100">
-                                    <a
-                                        href={`mailto:${staff.email}`}
-                                        className="inline-flex items-center gap-2 text-sm font-bold tracking-wider text-gray-500 hover:text-orange-600 uppercase transition-colors"
-                                    >
+
+                                <div className="flex items-center justify-between mt-8 pt-6 border-t border-stone-100">
+                                    <a href={`mailto:${staff.email}`} className="text-gray-500 group-hover:text-orange-600 font-bold text-sm tracking-wider uppercase flex items-center gap-2 transition-colors">
                                         Email {staff.name.split(' ')[0]} <ArrowRight className="w-4 h-4" />
                                     </a>
+                                    <div className="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center text-stone-300 group-hover:bg-orange-50 group-hover:text-orange-500 transition-all">
+                                        <Mail className="w-5 h-5" />
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -211,7 +200,7 @@ function About() {
                                     }
                                 </button>
                                 <div
-                                    className={`transition-all duration-300 ease-in-out px-8 text-gray-600 leading-relaxed overflow-hidden ${openIndex === index ? 'max-h-96 pb-8 opacity-100' : 'max-h-0 pb-0 opacity-0'
+                                    className={`transition-all duration-300 ease-in-out px-8 text-gray-600 leading-relaxed overflow-hidden ${openIndex === index ? 'max-h-[800px] pb-8 opacity-100' : 'max-h-0 pb-0 opacity-0'
                                         }`}
                                 >
                                     {belief.content}
