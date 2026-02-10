@@ -36,7 +36,12 @@ function HubCentral() {
       icon: <Newspaper className="w-8 h-8 text-blue-500" />,
       link: "https://bl.tn/fellowship",
       bgFrom: "from-blue-50",
-      bgTo: "to-blue-100/50"
+      bgTo: "to-blue-100/50",
+      secondaryButton: {
+        text: "Sign Up",
+        link: "https://www.t2ll.com/smsRedirect.aspx/?phoneNumber=8444816740&msg=fellowship",
+        mobileOnly: true
+      }
     },
     {
       title: "GIVE",
@@ -178,7 +183,7 @@ function HubCentral() {
                     {card.description}
                   </p>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto space-y-3">
                     {card.link.startsWith('/') ? (
                       <Link
                         to={card.link}
@@ -194,6 +199,16 @@ function HubCentral() {
                         className="inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white transition-all duration-300 bg-neutral-900 rounded-xl hover:bg-orange-500 hover:shadow-lg group-hover:translate-y-0"
                       >
                         {card.buttonText} <ArrowRight className="w-4 h-4 ml-2" />
+                      </a>
+                    )}
+                    {card.secondaryButton && (
+                      <a
+                        href={card.secondaryButton.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-neutral-900 transition-all duration-300 bg-white border-2 border-neutral-900 rounded-xl hover:bg-neutral-900 hover:text-white hover:shadow-lg${card.secondaryButton.mobileOnly ? ' md:hidden' : ''}`}
+                      >
+                        {card.secondaryButton.text} <ArrowRight className="w-4 h-4 ml-2" />
                       </a>
                     )}
                   </div>
