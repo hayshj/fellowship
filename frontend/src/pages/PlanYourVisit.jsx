@@ -1,31 +1,23 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import HeroImage from "../assets/pyv.webp";
 import Online from "../assets/home/family1.webp";
 import HomeNavbar from "../components/HomeNavbar";
 import { Music, Baby, Backpack, ChevronDown } from 'lucide-react';
 
 function PlanYourVisit() {
-  const iframeRef = useRef(null);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
-    const iframe = iframeRef.current;
-    if (iframe) {
-      iframe.style.visibility = "hidden";
-      iframe.style.position = "absolute";
-      iframe.style.top = "-9999px";
+    if (iframeLoaded) return;
+    // Lock scroll to top until iframe has loaded
+    const lockScroll = () => window.scrollTo(0, 0);
+    window.addEventListener('scroll', lockScroll);
+    return () => window.removeEventListener('scroll', lockScroll);
+  }, [iframeLoaded]);
 
-      const handleLoad = () => {
-        iframe.style.visibility = "visible";
-        iframe.style.position = "static";
-        iframe.style.top = "auto";
-      };
-
-      iframe.addEventListener("load", handleLoad);
-
-      return () => {
-        iframe.removeEventListener("load", handleLoad);
-      };
-    }
+  const handleIframeLoad = useCallback(() => {
+    window.scrollTo(0, 0);
+    setIframeLoaded(true);
   }, []);
 
   return (
@@ -128,18 +120,19 @@ function PlanYourVisit() {
         <div className="max-w-5xl mx-auto">
           <div className="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
             <div className="p-8 md:p-12 bg-white text-center border-b border-gray-100">
-              <h2 className="text-3xl font-bold text-gray-900">Pre-Register Check-In</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Plan Your Visit</h2>
               <p className="text-gray-500 mt-2">Save time on Sunday by letting us know you're coming!</p>
             </div>
-            <div className="relative min-h-[600px] bg-white">
+            <div className="bg-white">
               <iframe
-                ref={iframeRef}
                 src="https://churchteams.com/m/Register.asp?a=VEpjTTJzUmdyRU09"
                 width="100%"
-                height="1350"
-                style={{ border: "none", overflow: "hidden" }}
+                height="1450"
+                sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+                style={{ border: "none", display: "block" }}
                 title="Plan Your Visit"
                 className="w-full"
+                onLoad={handleIframeLoad}
               />
             </div>
           </div>
