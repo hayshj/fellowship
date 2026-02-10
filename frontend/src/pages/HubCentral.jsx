@@ -143,12 +143,12 @@ function HubCentral() {
         </div>
       </header>
 
-      {/* Intro */}
+      {/* Intro
       <div className="bg-white py-12 px-6 text-center border-b border-stone-100">
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           Welcome to Fellowship Church Hub Central. This is your starting point to find information, get connected, and move your faith forward.
         </p>
-      </div>
+      </div>*/}
 
       {/* Card Grid */}
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-stone-50">
