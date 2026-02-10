@@ -108,8 +108,8 @@ function HomeNavbar() {
 
         <div
           className={`absolute top-full left-0 mt-2 bg-neutral-900 border border-neutral-800 text-white shadow-xl rounded-xl overflow-hidden z-50 min-w-[220px] transform transition-all duration-200 ${dropdown === label
-              ? 'opacity-100 translate-y-0 pointer-events-auto'
-              : 'opacity-0 -translate-y-2 pointer-events-none'
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-2 pointer-events-none'
             }`}
         >
           <div className="py-2">
@@ -136,8 +136,8 @@ function HomeNavbar() {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-50 h-[80px] flex items-center justify-between px-8 transition-all duration-500 ${scrolled
-            ? 'bg-neutral-900/80 backdrop-blur-md shadow-2xl text-white py-2'
-            : 'bg-transparent text-white py-4'
+          ? 'bg-neutral-900/80 backdrop-blur-md shadow-2xl text-white py-2'
+          : 'bg-transparent text-white py-4'
           }`}
       >
         <Link to="/" onClick={scrollToTop}>
@@ -171,16 +171,12 @@ function HomeNavbar() {
         </button>
       </nav>
 
-      {menuOpen && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30" onClick={() => setMenuOpen(false)} />
-      )}
-
       <div
         ref={menuRef}
-        className={`fixed top-0 right-0 h-full max-w-xs w-full bg-neutral-900 border-l border-neutral-800 text-white z-40 transition-transform duration-300 ease-out shadow-2xl ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`fixed inset-0 w-full h-full bg-neutral-900 text-white z-40 transition-all duration-300 ease-out overflow-y-auto ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
       >
-        <div className="flex flex-col p-8 pt-[120px] gap-6">
+        <div className="flex flex-col p-8 pt-[120px] gap-6 min-h-full">
           {[...baseLinks, { name: 'Connect', children: connectItems }, { name: 'Watch', children: watchItems }].map(
             (item, i) =>
               item.children ? (
