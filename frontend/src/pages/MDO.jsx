@@ -15,7 +15,7 @@ function MDO() {
     { label: "Registration", amount: "$100", term: "one-time" },
     { label: "Fall Supply Fee", amount: "$75", term: "per semester" },
     { label: "Spring Supply Fee", amount: "$75", term: "per semester" },
-    { label: "Monthly Tuition", amount: "$190", term: "per month" },
+    { label: "Monthly Tuition", amount: "$200", term: "per month" },
   ];
 
   return (
@@ -47,25 +47,50 @@ function MDO() {
         </div>
       </header>
 
-      {/* Availability Section */}
+      {/* Registration Section */}
       <section className="py-16 px-6 md:px-12 lg:px-24 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="bg-stone-50 rounded-[2rem] border border-stone-100 p-8 md:p-12 shadow-sm">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Current Availability</h3>
-            <div className="grid gap-4 md:grid-cols-2">
-              {ageGroups.map((group, index) => (
-                <div key={index} className="bg-white p-4 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm">
-                  <span className="font-bold text-gray-700">{group.range}</span>
-                  <div className={`flex items-center gap-2 font-bold text-sm uppercase tracking-wide ${group.color}`}>
-                    {group.icon}
-                    {group.status}
-                  </div>
-                </div>
-              ))}
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 text-center">Register for Mother's Day Out: 2026–2027</h3>
+            <div className="w-16 h-1 bg-pink-400 mx-auto mt-4 mb-8 rounded-full"></div>
+
+            <div className="space-y-5 text-gray-600 leading-relaxed text-center">
+              <p>
+                Thank you for your interest in joining us at Fellowship MDO! We look forward to welcoming your family to our program.
+              </p>
+              <p>
+                Registration will be open to the public on <span className="font-bold text-gray-900">Tuesday, March 3rd at 10 AM</span>. Please register your child using the link that corresponds with your child's age as of September 1st, 2026.
+              </p>
+              <p>
+                You will need a <span className="font-bold text-gray-900">Brightwheel account</span> to register. If you don't already have one, you will need to create one. We suggest doing this before registration opens.{' '}
+                <a href="https://mybrightwheel.com/signup" target="_blank" rel="noopener noreferrer" className="text-pink-500 font-bold hover:underline">
+                  Click here to set up an account.
+                </a>
+              </p>
+              <p>
+                If you have any questions, please contact our Director, Ms. Kaitlin, at{' '}
+                <a href="mailto:kaitlin@fbrc.org" className="text-pink-500 font-bold hover:underline">kaitlin@fbrc.org</a>.
+              </p>
             </div>
-            <p className="text-center text-gray-500 mt-6 text-sm">
-              *Availability subject to change. Please contact us for the most up-to-date information.
-            </p>
+
+            <div className="grid gap-4 md:grid-cols-2 mt-10">
+              <a href="#" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">18 – 23 Months</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="#" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">2 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="#" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">3 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="#" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">4 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
