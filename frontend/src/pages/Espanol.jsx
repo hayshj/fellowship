@@ -1,15 +1,13 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
-import { Calendar, Clock, MapPin, Users, Heart, Mail, ArrowRight } from 'lucide-react';
 
 function Espanol() {
   return (
     <div className="font-sans antialiased bg-stone-50 text-gray-900">
       <HomeNavbar />
 
-      {/* Hero Section - Dark Gradient Background instead of Image */}
+      {/* Hero Section */}
       <header className="bg-neutral-900 py-32 px-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
-        {/* Decorative background elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
 
@@ -21,81 +19,52 @@ function Espanol() {
             FELLOWSHIP<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-amber-100 pr-2">ESPAÑOL</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
-            Una comunidad de fe, esperanza y amor para toda la familia.
-          </p>
         </div>
       </header>
 
-      {/* Main Content - Modern Grid Layout */}
-      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white relative">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">Nuestra Comunidad</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900">Únete a Nosotros</h3>
-            <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto mt-6 rounded-full"></div>
-          </div>
+      {/* Spanish Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">En Español</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">¡Bienvenidos a Fellowship Church en Español!</h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto mb-12 rounded-full"></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service Card */}
-            <div className="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-100 shadow-lg hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 text-orange-600 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                <Calendar className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Servicio Dominical</h3>
-              <div className="space-y-4 text-gray-600 mb-8">
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-orange-500" />
-                  <span className="font-medium">11:00 AM</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-orange-500" />
-                  <span>Auditorio Norte</span>
-                </div>
-              </div>
-              <p className="text-gray-500 leading-relaxed text-sm">
-                Únete a nosotros cada domingo para un tiempo de adoración vibrante y enseñanza bíblica práctica.
-              </p>
-            </div>
+          <div className="space-y-8 text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p>
+              Somos un ministerio en Fellowship Church. Somos una iglesia unida para alcanzar almas para Dios. Venga y sea parte de nuestro grupo que está dedicado a mover la fe Cristiana hacia el frente. Nuestros sermones regularmente son en Español y Ingles para que su joven o persona que no entienda Español pueda también disfrutar de la Palabra de Dios.
+            </p>
 
-            {/* Community Card */}
-            <div className="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-100 shadow-lg hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 text-blue-600 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-8 h-8" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Somos Familia</h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Fellowship Español es más que un servicio; es una familia. Aquí encontrarás personas que te apoyarán, orarán por ti y caminarán contigo en tu fe.
-              </p>
-              <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm uppercase tracking-wide">
-                <Heart className="w-4 h-4 fill-current" />
-                <span>Ama a Dios, Ama a Otros</span>
-              </div>
-            </div>
+            <h4 className="text-2xl md:text-3xl font-bold text-gray-900 pt-4">¿Cuándo Nos Reunimos?</h4>
 
-            {/* Connect Card */}
-            <div className="bg-stone-50 p-10 rounded-[2.5rem] border border-stone-100 shadow-lg hover:shadow-2xl transition-all duration-300 group hover:-translate-y-2 flex flex-col justify-between">
-              <div>
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 text-green-600 shadow-sm group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Conecta Con Nosotros</h3>
-                <p className="text-gray-600 leading-relaxed mb-8">
-                  ¿Tienes preguntas o quieres saber más sobre nuestras actividades? ¡Nos encantaría saber de ti!
-                </p>
-              </div>
-              <a
-                href="mailto:info@fbrc.org"
-                className="group/btn inline-flex items-center justify-center gap-2 w-full py-4 bg-neutral-900 text-white rounded-xl font-bold hover:bg-black transition-colors"
-              >
-                Contáctanos <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-              </a>
-            </div>
+            <p>
+              Los Jueves tenemos grupos pequeños a la 7 pm en la iglesia en el segundo piso. Los Domingos tenemos el Estudio Bíblico a la 1 pm y el Servicio General a las 2 pm en el santuario principal del primer piso. Los invitamos a continuar a crecer con nosotros. Venga y goce de buena enseñanza Bíblica, compañerismo, y Palabra de Dios.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Quote/Scripture Section (Optional Filler for vibe) */}
+      {/* English Section */}
+      <section className="py-24 px-6 md:px-12 lg:px-24 bg-stone-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">In English</h2>
+          <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Welcome to Fellowship Church en Español!</h3>
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-500 to-amber-500 mx-auto mb-12 rounded-full"></div>
+
+          <div className="space-y-8 text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p>
+              We are a ministry at Fellowship Church. We are a church united to reach souls for God. Come and be part of our group that is dedicated to moving the Christian faith forward. Our sermons are regularly in Spanish and English so that your young person or non-Spanish speaker can also enjoy God's Word.
+            </p>
+
+            <h4 className="text-2xl md:text-3xl font-bold text-gray-900 pt-4">When Do We Meet?</h4>
+
+            <p>
+              On Thursdays we have small groups at 7 pm at the church upstairs. On Sundays we have Bible study at 1 p.m. and the General Service at 2 p.m. in the main sanctuary on the first floor. We invite you to come and grow with us. Come and enjoy good Bible teaching, fellowship, and God's Word.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote/Scripture Section */}
       <section className="py-24 bg-neutral-900 text-center px-6">
         <div className="max-w-4xl mx-auto">
           <blockquote className="text-2xl md:text-4xl font-serif italic text-white/90 leading-relaxed mb-8">
