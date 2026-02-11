@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import HomeNavbar from '../components/HomeNavbar';
 import Church from '../assets/about/hero.webp';
+import CHPhoto from '../assets/about/CH.webp';
+import JHPhoto from '../assets/about/JH.webp';
+import KJPhoto from '../assets/about/KJ.webp';
+import RBPhoto from '../assets/about/RB.webp';
+import RSPhoto from '../assets/about/RS.webp';
+import KFPhoto from '../assets/about/KF.webp';
+import LMPhoto from '../assets/about/LM.webp';
+import JCPhoto from '../assets/about/JC.webp';
 import { Users, BookOpen, Heart, Star, HandHeart, Lightbulb, Shield, ChevronDown, ChevronUp, ArrowRight, Mail } from 'lucide-react';
 
 function About() {
@@ -76,13 +84,14 @@ function About() {
     ];
 
     const staffMembers = [
-        { name: 'Chad Hays', title: 'Lead Pastor', email: 'chays@fbrc.org' },
-        { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jhays@fbrc.org' },
-        { name: 'Kevin Jones', title: 'Small Groups', email: 'kjones@fbrc.org' },
-        { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'rbradley@fbrc.org' },
-        { name: 'Kaitlin Faggard', title: 'Preschool Director', email: 'kfaggard@fbrc.org' },
-        { name: 'Lauren Moore', title: "Children's Coordinator", email: 'lauren@fbrc.org' },
-        { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org' },
+        { name: 'Chad Hays', title: 'Lead Pastor', email: 'chad@fbrc.org', photo: CHPhoto },
+        { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jeff@fbrc.org', photo: JHPhoto },
+        { name: 'Kevin Jones', title: 'Small Groups', email: 'kevin@fbrc.org', photo: KJPhoto },
+        { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'ryan@fbrc.org', photo: RBPhoto },
+        { name: 'Rob Schoenthal', title: 'Worship Pastor', email: 'rob@fbrc.org', photo: RSPhoto },
+        { name: 'Kaitlin Faggard', title: 'Preschool Director', email: 'kaitlin@fbrc.org', photo: KFPhoto },
+        { name: 'Lauren Moore', title: 'Children\'s Coordinator', email: 'lauren@fbrc.org', photo: LMPhoto },
+        { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org', photo: JCPhoto },
     ];
 
     const toggleBelief = (index) => {
@@ -150,9 +159,14 @@ function About() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {staffMembers.map((staff, index) => (
-                            <div key={index} className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                            <div key={index} className="group bg-white rounded-3xl shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-amber-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-10"></div>
 
+                                <div className="aspect-[3/2] overflow-hidden">
+                                    <img src={staff.photo} alt={staff.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                </div>
+
+                                <div className="p-8">
                                 <div className="mb-6">
                                     <h3 className="text-2xl font-bold text-gray-900 group-hover:text-black transition-colors">{staff.name}</h3>
                                     <p className="text-orange-600 font-medium tracking-wide uppercase text-sm mt-1">{staff.title}</p>
@@ -165,6 +179,7 @@ function About() {
                                     <div className="w-10 h-10 rounded-full bg-stone-50 flex items-center justify-center text-stone-300 group-hover:bg-orange-50 group-hover:text-orange-500 transition-all">
                                         <Mail className="w-5 h-5" />
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         ))}
