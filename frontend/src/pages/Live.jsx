@@ -88,12 +88,12 @@ function Live() {
 
     const CountdownUnit = ({ value, label }) => (
         <div className="flex flex-col items-center">
-            <div className="w-20 h-20 md:w-28 md:h-28 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl flex items-center justify-center mb-3">
-                <span className="text-3xl md:text-5xl font-black text-white tabular-nums">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl md:rounded-2xl flex items-center justify-center mb-2 md:mb-3">
+                <span className="text-2xl sm:text-3xl md:text-5xl font-black text-white tabular-nums">
                     {String(value).padStart(2, '0')}
                 </span>
             </div>
-            <span className="text-xs md:text-sm font-bold tracking-widest text-neutral-400 uppercase">{label}</span>
+            <span className="text-[10px] sm:text-xs md:text-sm font-bold tracking-widest text-neutral-400 uppercase">{label}</span>
         </div>
     );
 
@@ -141,7 +141,7 @@ function Live() {
             ) : (
                 <>
                     {/* Countdown Hero */}
-                    <header className="bg-neutral-900 min-h-screen flex flex-col items-center justify-center text-center px-6 relative overflow-hidden">
+                    <header className="bg-neutral-900 min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 relative overflow-hidden">
                         {/* Decorative background */}
                         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
@@ -149,9 +149,6 @@ function Live() {
 
                         <div className="z-10 space-y-10 animate-fade-in-up max-w-3xl">
                             <div className="space-y-6">
-                                <span className="inline-flex items-center gap-2 py-1 px-3 border border-white/20 rounded-full text-xs md:text-sm font-medium tracking-widest text-neutral-400 uppercase backdrop-blur-sm">
-                                    <Clock className="w-4 h-4" /> Coming Soon
-                                </span>
                                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter">
                                     NEXT LIVE<br />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-purple-300 pr-2">STREAM</span>
@@ -162,13 +159,13 @@ function Live() {
                             </div>
 
                             {/* Countdown Timer */}
-                            <div className="flex items-center justify-center gap-3 md:gap-6">
+                            <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-6">
                                 <CountdownUnit value={countdown.days} label="Days" />
-                                <span className="text-3xl md:text-5xl font-light text-white/20 -mt-8">:</span>
+                                <span className="text-xl sm:text-3xl md:text-5xl font-light text-white/20 -mt-6 md:-mt-8">:</span>
                                 <CountdownUnit value={countdown.hours} label="Hours" />
-                                <span className="text-3xl md:text-5xl font-light text-white/20 -mt-8">:</span>
+                                <span className="text-xl sm:text-3xl md:text-5xl font-light text-white/20 -mt-6 md:-mt-8">:</span>
                                 <CountdownUnit value={countdown.minutes} label="Min" />
-                                <span className="text-3xl md:text-5xl font-light text-white/20 -mt-8">:</span>
+                                <span className="text-xl sm:text-3xl md:text-5xl font-light text-white/20 -mt-6 md:-mt-8">:</span>
                                 <CountdownUnit value={countdown.seconds} label="Sec" />
                             </div>
 
