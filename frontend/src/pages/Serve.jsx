@@ -7,7 +7,7 @@ export default function Serve() {
   const teams = [
     {
       icon: <Baby className="w-8 h-8 text-pink-500" />,
-      title: "Pre-K",
+      title: "Pre-School",
       description:
         "Help nurture and care for our youngest children in a safe and loving environment."
     },
