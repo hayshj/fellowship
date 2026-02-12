@@ -179,7 +179,7 @@ function MDO() {
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
           <p className="text-lg text-gray-600 mb-10">
-            Questions? Email our Director, Ms. Kaitlin, at <a href="mailto:kaitlin@fbrc.org" className="text-pink-500 font-bold hover:underline">kaitlin@fbrc.org</a> or use the form below.
+            Questions? Email our Director, Ms. Kaitlin, at <a href="mailto:kaitlin@fbrc.org" className="text-pink-500 font-bold hover:underline">kaitlin@fbrc.org</a>.
           </p>
         </div>
       </section>
