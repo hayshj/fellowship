@@ -48,7 +48,7 @@ function Footer() {
             <li className="flex flex-col">
               <span className="font-semibold text-white">Contact</span>
               <a href="mailto:info@fbrc.org" className="hover:text-white transition-colors">info@fbrc.org</a>
-              <a href="tel:9726369114" className="hover:text-white transition-colors">(972) 636-9114</a>
+              <a href="tel:9726363221" className="hover:text-white transition-colors">(972) 636-3221</a>
             </li>
           </ul>
         </div>
