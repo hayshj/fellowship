@@ -13,7 +13,8 @@ import {
   RefreshCcw,
   MonitorSmartphone,
   ArrowRight,
-  Link as LinkIcon
+  Link as LinkIcon,
+  HandHeart
 } from "lucide-react";
 
 function HubCentral() {
@@ -84,6 +85,16 @@ function HubCentral() {
       bgTo: "to-red-100/50"
     },
     {
+      title: "SERVE",
+      description:
+        "Use your gifts to make a difference. Find your perfect fit and start serving at Fellowship Church.",
+      buttonText: "Sign Up to Serve",
+      icon: <HandHeart className="w-8 h-8 text-emerald-500" />,
+      link: "https://churchteams.com/m/Register.asp?a=dEpqUlFxbW8reVk9",
+      bgFrom: "from-emerald-50",
+      bgTo: "to-emerald-100/50"
+    },
+    {
       title: "EVENTS",
       description:
         "Find all the info you need to register for upcoming events at Fellowship.",
@@ -106,12 +117,13 @@ function HubCentral() {
     {
       title: "UPDATE INFO",
       description:
-        "Has your contact info changed? Update your address, phone number or email. (Mobile only)",
+        "Has your contact info changed? Update your address, phone number or email.",
       buttonText: "Update Info",
       icon: <RefreshCcw className="w-8 h-8 text-indigo-500" />,
       link: "https://www.t2ll.com/auth/sms-redirect?phoneNumber=9728073070&msg=ME",
       bgFrom: "from-indigo-50",
-      bgTo: "to-indigo-100/50"
+      bgTo: "to-indigo-100/50",
+      mobileOnly: true
     },
     {
       title: "SOCIAL MEDIA",
@@ -163,7 +175,7 @@ function HubCentral() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="group relative bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
+                className={`group relative bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl border border-stone-100 transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full${card.mobileOnly ? ' md:hidden' : ''}`}
               >
                 {/* Subtle Gradient Background on Hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${card.bgFrom} ${card.bgTo} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>

@@ -134,10 +134,12 @@ export default function Serve() {
               <div className="relative z-10 max-w-2xl mx-auto space-y-8">
                 <h2 className="text-3xl md:text-5xl font-bold">Ready to jump in?</h2>
                 <p className="text-stone-300 text-lg">
-                  We'd love to help you find your perfect fit. Fill out the form below to get started.
+                  We'd love to help you find your perfect fit. Sign up below to get started.
                 </p>
                 <a
-                  href="/serve/form"
+                  href="https://churchteams.com/m/Register.asp?a=dEpqUlFxbW8reVk9"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-white text-black font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-green-400 transition-all transform hover:scale-105"
                 >
                   Get Connected <ArrowRight className="w-4 h-4" />

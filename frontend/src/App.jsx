@@ -13,7 +13,6 @@ import Students from './pages/Students';
 import Children from './pages/Children';
 import MDO from './pages/MDO';
 import Serve from './pages/Serve';
-import ServeForm from './pages/ServeForm';
 import Midweek from './pages/Midweek';
 import Espanol from './pages/Espanol';
 import NotFound from './pages/NotFound';
@@ -35,7 +34,6 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/connect" element={<ConnectGroups />} />
         <Route path="/serve" element={<Serve />} />
-        <Route path="/serve/form" element={<ServeForm />} />
         <Route path="/midweek" element={<Midweek />} />
         <Route path="/students" element={<Students />} />
         <Route path="/children" element={<Children />} />
