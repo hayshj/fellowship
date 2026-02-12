@@ -174,41 +174,6 @@ function MDO() {
           <p className="text-lg text-gray-600 mb-10">
             Questions? Email our Director, Ms. Kaitlin, at <a href="mailto:kaitlin@fbrc.org" className="text-pink-500 font-bold hover:underline">kaitlin@fbrc.org</a> or use the form below.
           </p>
-
-          <form className="space-y-6 text-left bg-stone-50 p-8 rounded-[2rem] border border-stone-100 shadow-sm">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700 ml-1">Name</label>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-gray-700 ml-1">Email</label>
-                <input
-                  type="email"
-                  placeholder="email@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 transition-all"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-gray-700 ml-1">Message</label>
-              <textarea
-                placeholder="How can we help you?"
-                rows={4}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-500/20 focus:border-pink-500 transition-all resize-none"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-neutral-900 text-white font-bold uppercase tracking-wider py-4 rounded-xl hover:bg-black transition-colors shadow-lg"
-            >
-              Send Message
-            </button>
-          </form>
         </div>
       </section>
     </div>
