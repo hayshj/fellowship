@@ -9,11 +9,14 @@ function Live() {
 
     useEffect(() => {
         const getTargetUtcHour = () => {
+            // 10:55 AM Central Time in UTC
+            // CDT (summer, UTC-5): 10 + 5 = 15
+            // CST (winter, UTC-6): 10 + 6 = 16
             const now = new Date();
             const jan = new Date(now.getFullYear(), 0, 1).getTimezoneOffset();
             const jul = new Date(now.getFullYear(), 6, 1).getTimezoneOffset();
-            const isDST = Math.min(jan, jul) !== now.getTimezoneOffset();
-            return isDST ? 14 : 15; // 10:55 AM CDT/CST in UTC
+            const isDST = now.getTimezoneOffset() === Math.min(jan, jul);
+            return isDST ? 15 : 16;
         };
 
         const checkLiveStatus = () => {
