@@ -1,7 +1,7 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import Mdwk from "../assets/mdwk.webp";
-import { Baby, Users, Music, Heart, BookOpen, Clock, CalendarDays, ArrowRight } from 'lucide-react';
+import { Baby, Users, Music, Heart, BookOpen, CalendarDays } from 'lucide-react';
 
 function Midweek() {
   const cards = [
@@ -105,12 +105,9 @@ function Midweek() {
                 key={index}
                 className="group bg-stone-50 rounded-[2.5rem] p-8 border border-stone-100 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
               >
-                <div className="mb-6 flex items-start justify-between">
+                <div className="mb-6">
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform duration-300">
                     {card.icon}
-                  </div>
-                  <div className="bg-white px-3 py-1 rounded-full text-xs font-bold text-stone-500 border border-stone-100 shadow-sm flex items-center gap-1">
-                    <Clock className="w-3 h-3" /> {card.time}
                   </div>
                 </div>
 
@@ -121,12 +118,6 @@ function Midweek() {
                 <p className="text-gray-600 leading-relaxed text-sm flex-grow">
                   {card.description}
                 </p>
-
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <span className="text-stone-400 font-bold text-xs tracking-widest uppercase flex items-center gap-2 group-hover:text-stone-600 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </div>
               </div>
             ))}
           </div>

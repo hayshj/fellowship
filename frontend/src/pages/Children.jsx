@@ -1,7 +1,7 @@
 import React from "react";
 import HomeNavbar from "../components/HomeNavbar";
 import ChildrenImage from "../assets/children.webp";
-import { ShieldCheck, Calendar, HeartHandshake, Baby, ArrowRight, Star } from 'lucide-react';
+import { ShieldCheck, Calendar, Baby } from 'lucide-react';
 
 function Children() {
   return (
@@ -74,29 +74,6 @@ function Children() {
                 We provide a nurturing environment for your little ones, ensuring they feel safe and loved while you attend service.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner With Us CTA */}
-      <section className="py-24 bg-stone-900 text-white relative overflow-hidden px-6">
-        <div className="max-w-4xl mx-auto text-center relative z-10 space-y-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-4 mx-auto">
-            <HeartHandshake className="w-8 h-8 text-white" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold">Partner With Us</h2>
-          <p className="text-xl text-stone-300 max-w-2xl mx-auto leading-relaxed">
-            Whether you're a parent wanting to learn more, or someone interested in serving the next generation, we’d love to connect with you!
-          </p>
-          <div className="pt-4">
-            <a
-              href="https://churchteams.com/m/Register.asp?a=CHILDREN_SIGNUP_FORM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-yellow-400 transition-all transform hover:scale-105 shadow-xl"
-            >
-              Get Connected <ArrowRight className="w-4 h-4" />
-            </a>
           </div>
         </div>
       </section>
