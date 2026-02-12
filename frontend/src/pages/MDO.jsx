@@ -4,6 +4,7 @@ import ChildrenImage from "../assets/childrensmain.webp";
 import { Clock, Calendar, GraduationCap, Heart, DollarSign, Mail, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 
 function MDO() {
+  const registrationOpen = new Date() >= new Date("2026-03-03T10:00:00-06:00");
   const ageGroups = [
     { range: "18 - 23 months", status: "Waitlist", color: "text-amber-500", icon: <AlertCircle className="w-5 h-5 text-amber-500" /> },
     { range: "2 year olds", status: "Full", color: "text-red-500", icon: <XCircle className="w-5 h-5 text-red-500" /> },
@@ -73,24 +74,30 @@ function MDO() {
               </p>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-2 mt-10">
-              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d306d232-5144-423b-aee7-91db3394b821/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                <span className="font-bold text-gray-700">18 – 23 Months</span>
-                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-              </a>
-              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/05c1b307-59e9-471e-9bb2-bac3a863a2c3/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                <span className="font-bold text-gray-700">2 Year Old</span>
-                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-              </a>
-              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/ef83dcc9-292a-454c-894e-11ffa1a254b6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                <span className="font-bold text-gray-700">3 Year Old</span>
-                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-              </a>
-              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d259fb87-b7bf-45b4-a127-183ac703dee6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                <span className="font-bold text-gray-700">4 Year Old</span>
-                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-              </a>
-            </div>
+            {registrationOpen ? (
+              <div className="grid gap-4 md:grid-cols-2 mt-10">
+                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d306d232-5144-423b-aee7-91db3394b821/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                  <span className="font-bold text-gray-700">18 – 23 Months</span>
+                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+                </a>
+                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/05c1b307-59e9-471e-9bb2-bac3a863a2c3/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                  <span className="font-bold text-gray-700">2 Year Old</span>
+                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+                </a>
+                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/ef83dcc9-292a-454c-894e-11ffa1a254b6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                  <span className="font-bold text-gray-700">3 Year Old</span>
+                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+                </a>
+                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d259fb87-b7bf-45b4-a127-183ac703dee6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                  <span className="font-bold text-gray-700">4 Year Old</span>
+                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+                </a>
+              </div>
+            ) : (
+              <p className="mt-10 text-gray-500 font-medium text-center">
+                Registration links will appear here on March 3rd, 2026 at 10:00 AM CT.
+              </p>
+            )}
           </div>
         </div>
       </section>
