@@ -16,11 +16,14 @@ export default function ServeForm() {
   });
 
   const teams = [
-    "Welcome Team",
-    "Hospitality Team",
-    "Worship Team",
-    "Security Team",
+    "Pre-K",
     "Kids Ministry",
+    "Students",
+    "Welcome Team",
+    "Worship",
+    "Tech Team",
+    "Cafe",
+    "Missions",
   ];
 
   const handleChange = (e) => {
