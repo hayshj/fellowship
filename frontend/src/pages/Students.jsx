@@ -121,12 +121,6 @@ function Students() {
                 </div>
               </div>
             </div>
-
-            <button
-              className="group inline-flex items-center gap-3 bg-neutral-900 text-white px-8 py-4 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg hover:bg-black hover:shadow-xl transition-all"
-            >
-              Plan Your Visit <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
           </div>
         </div>
       </section>
