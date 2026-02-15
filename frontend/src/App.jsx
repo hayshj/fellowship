@@ -15,6 +15,7 @@ import MDO from './pages/MDO';
 import Serve from './pages/Serve';
 import Midweek from './pages/Midweek';
 import Espanol from './pages/Espanol';
+import Give from './pages/Give';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -39,6 +40,7 @@ function App() {
         <Route path="/children" element={<Children />} />
         <Route path="/children/mdo" element={<MDO />} />
         <Route path="/espanol" element={<Espanol />} />
+        <Route path="/give" element={<Give />} />
 
         {/* Catch-all route for 404 */}
         <Route path="*" element={<NotFound />} />
