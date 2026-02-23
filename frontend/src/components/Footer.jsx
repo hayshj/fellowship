@@ -56,8 +56,9 @@ function Footer() {
 
       </div>
 
-      <div className="border-t border-neutral-900 pt-8 text-xs text-neutral-600 text-center">
+      <div className="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-neutral-600">
         <p>© {new Date().getFullYear()} Fellowship Church. All rights reserved.</p>
+        <a href="/privacy" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
       </div>
     </footer>
   );
