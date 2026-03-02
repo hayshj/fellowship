@@ -86,11 +86,11 @@ function About() {
     const staffMembers = [
         { name: 'Chad Hays', title: 'Lead Pastor', email: 'chad@fbrc.org', photo: CHPhoto },
         { name: 'Jeff Hays', title: 'Executive Pastor', email: 'jeff@fbrc.org', photo: JHPhoto },
-        { name: 'Kevin Jones', title: 'Small Groups', email: 'kevin@fbrc.org', photo: KJPhoto },
+        { name: 'Kevin Jones', title: 'Small Groups and Missions Pastor', email: 'kevin@fbrc.org', photo: KJPhoto },
         { name: 'Ryan Bradley', title: 'Youth Pastor', email: 'ryan@fbrc.org', photo: RBPhoto },
-        { name: 'Rob Schoenthal', title: 'Worship Pastor', email: 'rob@fbrc.org', photo: RSPhoto },
+        { name: 'Rob Schoenthal', title: 'Worship Leader', email: 'rob@fbrc.org', photo: RSPhoto },
         { name: 'Kaitlin Faggard', title: 'Preschool Director', email: 'kaitlin@fbrc.org', photo: KFPhoto },
-        { name: 'Lauren Moore', title: 'Children\'s Coordinator', email: 'lauren@fbrc.org', photo: LMPhoto },
+        { name: 'Lauren Moore', title: 'Children\'s Director', email: 'lauren@fbrc.org', photo: LMPhoto },
         { name: 'Jenna Carruth', title: 'Office Administrator', email: 'info@fbrc.org', photo: JCPhoto },
     ];
 
