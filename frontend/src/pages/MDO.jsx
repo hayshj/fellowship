@@ -4,7 +4,6 @@ import ChildrenImage from "../assets/childrensmain.webp";
 import { Clock, Calendar, GraduationCap, Heart, DollarSign, Mail, CheckCircle, AlertCircle, XCircle } from 'lucide-react';
 
 function MDO() {
-  const registrationOpen = new Date() >= new Date("2026-03-03T10:00:00-06:00");
   const ageGroups = [
     { range: "18 - 23 months", status: "Waitlist", color: "text-amber-500", icon: <AlertCircle className="w-5 h-5 text-amber-500" /> },
     { range: "2 year olds", status: "Full", color: "text-red-500", icon: <XCircle className="w-5 h-5 text-red-500" /> },
@@ -60,13 +59,7 @@ function MDO() {
                 Thank you for your interest in joining us at Fellowship MDO! We look forward to welcoming your family to our program.
               </p>
               <p>
-                Registration will be open to the public on <span className="font-bold text-gray-900">Tuesday, March 3rd at 10 AM</span>. Please register your child using the link that corresponds with your child's age as of September 1st, 2026.
-              </p>
-              <p>
-                You will need a <span className="font-bold text-gray-900">Brightwheel account</span> to register. If you don't already have one, you will need to create one. We suggest doing this before registration opens.{' '}
-                <a href="https://mybrightwheel.com/signup" target="_blank" rel="noopener noreferrer" className="text-pink-500 font-bold hover:underline">
-                  Click here to set up an account.
-                </a>
+                To join our waiting list, please register using the link below that corresponds with your child's age as of September 1, 2026.
               </p>
               <p>
                 If you have any questions, please contact our Director, Ms. Kaitlin, at{' '}
@@ -74,30 +67,24 @@ function MDO() {
               </p>
             </div>
 
-            {registrationOpen ? (
-              <div className="grid gap-4 md:grid-cols-2 mt-10">
-                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d306d232-5144-423b-aee7-91db3394b821/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                  <span className="font-bold text-gray-700">18 – 23 Months</span>
-                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-                </a>
-                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/05c1b307-59e9-471e-9bb2-bac3a863a2c3/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                  <span className="font-bold text-gray-700">2 Year Old</span>
-                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-                </a>
-                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/ef83dcc9-292a-454c-894e-11ffa1a254b6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                  <span className="font-bold text-gray-700">3 Year Old</span>
-                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-                </a>
-                <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d259fb87-b7bf-45b4-a127-183ac703dee6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                  <span className="font-bold text-gray-700">4 Year Old</span>
-                  <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-                </a>
-              </div>
-            ) : (
-              <p className="mt-10 text-gray-500 font-medium text-center">
-                Registration links will appear here on March 3rd, 2026 at 10:00 AM CT.
-              </p>
-            )}
+            <div className="grid gap-4 md:grid-cols-2 mt-10">
+              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d306d232-5144-423b-aee7-91db3394b821/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">18 – 23 Months</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/05c1b307-59e9-471e-9bb2-bac3a863a2c3/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">2 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/ef83dcc9-292a-454c-894e-11ffa1a254b6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">3 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d259fb87-b7bf-45b4-a127-183ac703dee6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
+                <span className="font-bold text-gray-700">4 Year Old</span>
+                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -135,8 +122,8 @@ function MDO() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Schedule</h4>
-                  <p className="text-gray-600">Follows RCISD Calendar</p>
-                  <p className="text-gray-500 text-sm">September – May</p>
+                  <p className="text-gray-600">September – Mid May</p>
+                  <p className="text-gray-500 text-sm">Following RCISD for holiday breaks</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -145,8 +132,7 @@ function MDO() {
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900">Curriculum</h4>
-                  <p className="text-gray-600">Faith & Foundations</p>
-                  <p className="text-gray-500 text-sm">Focus on kindergarten readiness</p>
+                  <p className="text-gray-600">We use a Bible-based curriculum, with a fun and engaging topic each week covering letters, numbers, colors, and more. Children will participate in music time, chapel, circle time and more! The entire program follows the same curriculum that is tailored for each class.</p>
                 </div>
               </div>
             </div>
