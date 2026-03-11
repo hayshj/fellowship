@@ -142,7 +142,7 @@ function MDO() {
           <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-lg border border-stone-100">
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-gray-900">Tuition & Fees</h3>
-              <p className="text-gray-500">2025 – 2026 School Year</p>
+              <p className="text-gray-500">2026 – 2027 School Year</p>
             </div>
 
             <div className="space-y-4">
