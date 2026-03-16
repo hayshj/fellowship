@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HomeNavbar from "../components/HomeNavbar";
-import WorshipImg from "../assets/easter/worship.jpg";
-import MessageImg from "../assets/easter/message.jpg";
-import HuntImg from "../assets/easter/hunt.jpg";
+import WorshipImg from "../assets/easter/worship.webp";
+import MessageImg from "../assets/easter/message.webp";
+import HuntImg from "../assets/easter/hunt.webp";
 
 function Easter() {
   return (
