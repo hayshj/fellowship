@@ -16,6 +16,7 @@ import Serve from './pages/Serve';
 import Midweek from './pages/Midweek';
 import Espanol from './pages/Espanol';
 import Give from './pages/Give';
+import Easter from './pages/Easter';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/children/mdo" element={<MDO />} />
         <Route path="/espanol" element={<Espanol />} />
         <Route path="/give" element={<Give />} />
+        <Route path="/easter" element={<Easter />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
 
         {/* Catch-all route for 404 */}

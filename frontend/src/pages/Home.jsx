@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeroImage from "../assets/home/IMG_6780.webp";
 import HomeNavbar from "../components/HomeNavbar";
+import EasterHero from "../components/EasterHero";
 import Service from "../assets/home/IMG_6942.webp";
 import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.webp";
 import Serve from "../assets/home/serve.webp";
@@ -50,7 +51,7 @@ function Home2() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      <header className="relative w-full h-screen overflow-hidden group">
+      {/* <header className="relative w-full h-screen overflow-hidden group">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 group-hover:scale-105"
           style={{
@@ -86,7 +87,8 @@ function Home2() {
             </Link>
           </div>
         </div>
-      </header>
+      </header> */}
+      <EasterHero />
 
 
       {/* Cards Section - Creative Layout */}

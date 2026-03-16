@@ -49,6 +49,7 @@ function HomeNavbar() {
     { name: 'Home', path: '/' },
     { name: 'Plan Your Visit', path: '/plan-your-visit' },
     { name: 'About', path: '/about' },
+    { name: 'Give', path: '/give' },
     { name: 'Hub Central', path: '/hub' },
     { name: 'Español', path: '/espanol' }
   ];
