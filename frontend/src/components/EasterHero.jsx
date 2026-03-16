@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 const EasterHero = () => {
@@ -13,13 +12,6 @@ const EasterHero = () => {
                 {/* Noise overlay */}
                 <div className="absolute inset-0 opacity-[0.04] mix-blend-overlay bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJuIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iMSIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNuKSIvPjwvc3ZnPg==')]"></div>
 
-                {/* Giant background text */}
-                <div className="absolute top-0 w-full flex justify-center -translate-y-[10%] md:-translate-y-1/4 opacity-[0.04] select-none">
-                    <span className="text-[28vw] font-black text-white whitespace-nowrap tracking-tighter" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>EASTER</span>
-                </div>
-                <div className="absolute bottom-0 w-full flex justify-center translate-y-[10%] md:translate-y-1/4 opacity-[0.04] select-none rotate-180">
-                    <span className="text-[28vw] font-black text-white whitespace-nowrap tracking-tighter" style={{ WebkitTextStroke: '2px white', color: 'transparent' }}>EASTER</span>
-                </div>
             </div>
 
             <div className="relative z-10 w-full px-4 md:px-8 flex flex-col items-center">
