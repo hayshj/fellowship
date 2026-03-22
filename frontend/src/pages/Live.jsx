@@ -108,7 +108,7 @@ function Live() {
                 <>
 
                     {/* Live Stream Video */}
-                    <section className="bg-neutral-900 px-6 pb-24">
+                    <section className="bg-neutral-900 px-6 pb-24 w-full min-h-screen">
                         <div className="max-w-6xl mx-auto">
                             <div className="rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video">
                                 <iframe
