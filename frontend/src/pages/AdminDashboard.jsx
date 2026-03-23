@@ -19,6 +19,8 @@ export default function AdminDashboard() {
   // ── sermon list ──────────────────────────────────────────────
   const [sermons, setSermons] = useState([]);
   const [loadingSermons, setLoadingSermons] = useState(true);
+  const [page, setPage] = useState(1);
+  const PAGE_SIZE = 10;
 
   // ── add form ─────────────────────────────────────────────────
   const [form, setForm] = useState(EMPTY_FORM);
@@ -76,6 +78,7 @@ export default function AdminDashboard() {
 
       setAddSuccess(`"${data.title}" added successfully!`);
       setForm(EMPTY_FORM);
+      setPage(1);
       fetchSermons();
     } catch {
       setAddError('Network error. Please try again.');
@@ -268,7 +271,7 @@ export default function AdminDashboard() {
             <p className="text-gray-400">No sermons yet.</p>
           ) : (
             <div className="space-y-3">
-              {sermons.map((sermon) =>
+              {sermons.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE).map((sermon) =>
                 editingId === sermon._id ? (
                   /* ── Edit Row ── */
                   <div
@@ -368,6 +371,32 @@ export default function AdminDashboard() {
                   </div>
                 )
               )}
+            </div>
+          )}
+
+          {/* Pagination */}
+          {sermons.length > PAGE_SIZE && (
+            <div className="flex items-center justify-between mt-6">
+              <button
+                onClick={() => { setPage((p) => p - 1); setEditingId(null); }}
+                disabled={page === 1}
+                className="bg-white border border-stone-200 hover:border-stone-400 disabled:opacity-30 disabled:cursor-not-allowed text-gray-900 font-medium px-5 py-2 rounded-full text-sm transition-colors shadow-sm"
+              >
+                ← Previous
+              </button>
+
+              <p className="text-sm text-gray-400">
+                Page <span className="font-semibold text-gray-700">{page}</span> of{' '}
+                <span className="font-semibold text-gray-700">{Math.ceil(sermons.length / PAGE_SIZE)}</span>
+              </p>
+
+              <button
+                onClick={() => { setPage((p) => p + 1); setEditingId(null); }}
+                disabled={page === Math.ceil(sermons.length / PAGE_SIZE)}
+                className="bg-white border border-stone-200 hover:border-stone-400 disabled:opacity-30 disabled:cursor-not-allowed text-gray-900 font-medium px-5 py-2 rounded-full text-sm transition-colors shadow-sm"
+              >
+                Next →
+              </button>
             </div>
           )}
         </section>
