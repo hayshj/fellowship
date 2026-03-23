@@ -3,6 +3,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const Sermon = require('../../models/Sermon');
+const verifyAdmin = require('../../middleware/verifyAdmin');
 
 const router = express.Router();
 
@@ -33,7 +34,7 @@ router.get('/', async (req, res) => {
 });
 
 // Create a new sermons
-router.post('/', async(req, res) => {
+router.post('/', verifyAdmin, async(req, res) => {
     const { title, date, scripture, speaker, videoLink } = req.body;
     if(!title || !date || !videoLink){
         return res.status(400).json({ error: 'Missing required fields '});
@@ -49,8 +50,20 @@ router.post('/', async(req, res) => {
     }
 })
 
+// Delete sermon
+router.delete('/:id', verifyAdmin, async (req, res) => {
+    try {
+        const sermon = await Sermon.findByIdAndDelete(req.params.id);
+        if (!sermon) return res.status(404).json({ error: 'Sermon not found' });
+        res.json({ message: 'Sermon deleted' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to delete sermon' });
+    }
+});
+
 // Update sermon
-router.put('/:id', async (req, res) => {
+router.put('/:id', verifyAdmin, async (req, res) => {
     try{
         const { title, date, scripture, speaker, videoLink } = req.body;
 
