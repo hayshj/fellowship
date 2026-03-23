@@ -106,11 +106,9 @@ function Live() {
 
             {isLive ? (
                 <>
+
                     {/* Live Hero */}
                     <header className="bg-neutral-900 pt-[80px] pb-12 px-6 flex flex-col items-center justify-center text-center relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
                         <div className="z-10 space-y-4 animate-fade-in-up mt-8">
                             <div className="inline-flex items-center gap-2 py-1 px-4 bg-red-500/20 border border-red-500/40 rounded-full">
                                 <span className="relative flex h-3 w-3">
@@ -126,7 +124,7 @@ function Live() {
                     </header>
 
                     {/* Live Stream Video */}
-                    <section className="bg-neutral-900 px-6 pb-24">
+                    <section className="bg-neutral-900 px-6 pb-24 w-full min-h-screen">
                         <div className="max-w-6xl mx-auto">
                             <div className="rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video">
                                 <iframe
