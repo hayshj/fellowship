@@ -1,24 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import HeroImage from "../assets/pyv.webp";
 import Online from "../assets/home/family1.webp";
 import HomeNavbar from "../components/HomeNavbar";
 import { Music, Baby, Backpack, ChevronDown } from 'lucide-react';
 
 function PlanYourVisit() {
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-
-  useEffect(() => {
-    if (iframeLoaded) return;
-    // Lock scroll to top until iframe has loaded
-    const lockScroll = () => window.scrollTo(0, 0);
-    window.addEventListener('scroll', lockScroll);
-    return () => window.removeEventListener('scroll', lockScroll);
-  }, [iframeLoaded]);
-
-  const handleIframeLoad = useCallback(() => {
-    window.scrollTo(0, 0);
-    setIframeLoaded(true);
-  }, []);
 
   return (
     <div className="font-sans antialiased bg-stone-50 text-gray-900">
@@ -132,7 +118,6 @@ function PlanYourVisit() {
                 style={{ border: "none", display: "block" }}
                 title="Plan Your Visit"
                 className="w-full"
-                onLoad={handleIframeLoad}
               />
             </div>
           </div>
