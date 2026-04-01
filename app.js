@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const cron = require("node-cron");
+const { runSermonJob } = require("./sundaySermonJob");
 
 const sermonRouter = require('./routes/api/sermon');
 const adminRouter = require('./routes/api/admin');
@@ -95,4 +97,10 @@ app.get(/^\/(?!api\/).*/, (req, res) => {
 
 const port = process.env.PORT || 3001;
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+
+  // Every Sunday at 1:00 PM CST (America/Chicago handles CST/CDT automatically)
+  cron.schedule('0 13 * * 0', runSermonJob, { timezone: 'America/Chicago' });
+  console.log('Sunday sermon job scheduled (Sundays 1:00 PM CST)');
+});
