@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import HeroImage from "../assets/home/IMG_6780.webp";
+import HeroImage from "../assets/home/BO5A0224.webp";
 import HomeNavbar from "../components/HomeNavbar";
-import EasterHero from "../components/EasterHero";
 import Service from "../assets/home/IMG_6942.webp";
 import ConnectGroups from "../assets/home/lightstock_60246_small_scott_.webp";
 import Serve from "../assets/home/serve.webp";
@@ -58,7 +57,7 @@ function Home2() {
             backgroundImage: `url(${HeroImage})`,
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
         </div>
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 md:px-6 space-y-8 animate-fade-in-up">
