@@ -15,6 +15,35 @@ function Home2() {
 
   const [latestSermon, setLatestSermon] = useState(null);
   const [events, setEvents] = useState([]);
+  const [isLive, setIsLive] = useState(false);
+
+  useEffect(() => {
+    const getTargetUtcHour = () => {
+      const now = new Date();
+      const jan = new Date(now.getFullYear(), 0, 1).getTimezoneOffset();
+      const jul = new Date(now.getFullYear(), 6, 1).getTimezoneOffset();
+      const isDST = now.getTimezoneOffset() === Math.min(jan, jul);
+      return isDST ? 15 : 16;
+    };
+
+    const checkLiveStatus = () => {
+      const now = new Date();
+      const utcDay = now.getUTCDay();
+      const utcHours = now.getUTCHours();
+      const utcMinutes = now.getUTCMinutes();
+      const targetUtcHour = getTargetUtcHour();
+      const isSunday = utcDay === 0;
+      const isInLiveWindow =
+        (utcHours === targetUtcHour && utcMinutes >= 55) ||
+        (utcHours === targetUtcHour + 1) ||
+        (utcHours === targetUtcHour + 2 && utcMinutes <= 30);
+      setIsLive(isSunday && isInLiveWindow);
+    };
+
+    checkLiveStatus();
+    const interval = setInterval(checkLiveStatus, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -78,12 +107,14 @@ function Home2() {
               <span className="relative z-10 flex items-center gap-2">Plan Your Visit <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" /></span>
               <div className="absolute inset-0 bg-neutral-200 transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-300 ease-out"></div>
             </Link>
-            <Link
-              to="/live"
-              className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
-            >
-              Watch Live
-            </Link>
+            {isLive && (
+              <Link
+                to="/live"
+                className="group px-8 py-4 bg-transparent border-2 border-white text-white font-bold uppercase tracking-wider rounded-full hover:bg-white/10 backdrop-blur-sm transition-all duration-300 hover:scale-105"
+              >
+                Watch Live
+              </Link>
+            )}
           </div>
         </div>
       </header>
