@@ -51,7 +51,7 @@ function Home2() {
       <HomeNavbar />
 
       {/* Hero Section */}
-      {/* <header className="relative w-full h-screen overflow-hidden group">
+      <header className="relative w-full h-screen overflow-hidden group">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 group-hover:scale-105"
           style={{
@@ -87,8 +87,7 @@ function Home2() {
             </Link>
           </div>
         </div>
-      </header> */}
-      <EasterHero />
+      </header>
 
 
       {/* Cards Section - Creative Layout */}
