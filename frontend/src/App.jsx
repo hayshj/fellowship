@@ -14,7 +14,6 @@ import Children from './pages/Children';
 import MDO from './pages/MDO';
 import Serve from './pages/Serve';
 import Midweek from './pages/Midweek';
-import Espanol from './pages/Espanol';
 import Give from './pages/Give';
 import Easter from './pages/Easter';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -47,7 +46,6 @@ function App() {
         <Route path="/students" element={<Students />} />
         <Route path="/children" element={<Children />} />
         <Route path="/children/mdo" element={<MDO />} />
-        <Route path="/espanol" element={<Espanol />} />
         <Route path="/give" element={<Give />} />
         <Route path="/easter" element={<Easter />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />

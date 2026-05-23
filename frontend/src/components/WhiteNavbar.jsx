@@ -21,7 +21,6 @@ function Navbar() {
     { name: 'Plan Your Visit', path: '/plan-your-visit' },
     { name: 'About', path: '/about' },
     { name: 'Hub Central', path: '/hub' },
-    { name: 'Español', path: '/espanol' }
   ];
 
   const connectItems = [

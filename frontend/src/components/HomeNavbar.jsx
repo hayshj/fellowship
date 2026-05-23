@@ -51,7 +51,6 @@ function HomeNavbar() {
     { name: 'About', path: '/about' },
     { name: 'Give', path: '/give' },
     { name: 'Hub Central', path: '/hub' },
-    { name: 'Español', path: '/espanol' }
   ];
 
   const connectItems = [
