@@ -78,7 +78,7 @@ function Sermons() {
       <HomeNavbar />
 
       {/* Hero Section - Split Layout (Desktop) / Column (Mobile) */}
-      <div className="relative bg-neutral-900 text-white overflow-hidden">
+      <div className="relative text-white overflow-hidden" style={{ backgroundColor: '#111111' }}>
         <div className="flex flex-col lg:flex-row h-auto lg:h-[85vh]">
 
           {/* Content Side */}
@@ -109,7 +109,6 @@ function Sermons() {
 
           {/* Image Side */}
           <div className="flex-1 relative h-[50vh] lg:h-auto">
-            <div className="absolute inset-0 bg-neutral-900/20 z-10 lg:bg-gradient-to-r lg:from-neutral-900 lg:to-transparent"></div>
             <img
               src={HeroImage}
               alt="Sermons Hero"
