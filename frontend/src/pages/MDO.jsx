@@ -65,6 +65,9 @@ function MDO() {
                 If you have any questions, please contact our Director, Ms. Kaitlin, at{' '}
                 <a href="mailto:kaitlin@fbrc.org" className="text-pink-500 font-bold hover:underline">kaitlin@fbrc.org</a>.
               </p>
+              <div className="mt-4 bg-pink-50 border border-pink-200 rounded-xl px-6 py-4 text-pink-800 text-sm font-medium">
+                Communication regarding registration status will be through the Brightwheel app. Please log in and turn notifications on!
+              </div>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 mt-10">
