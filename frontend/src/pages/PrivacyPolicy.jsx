@@ -15,6 +15,9 @@ function PrivacyPolicy() {
             <p>
               Fellowship Church values you, and we want to protect the information you give us that allows us to communicate with you. To that end, we do not share data (including mobile opt-in data) with third parties for marketing or promotional purposes.
             </p>
+            <p>
+              We use PostHog, a website analytics tool, to understand which pages visitors find helpful. This is limited to anonymous pageview data (the pages you visit and general technical details like browser and device type) — we do not record what you type or click, and this data is never sold or shared for marketing.
+            </p>
           </div>
         </div>
       </section>

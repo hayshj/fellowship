@@ -1,5 +1,7 @@
 import './App.css'
+import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import posthog, { posthogEnabled } from './lib/posthog';
 import Home from './pages/Home'
 import PlanYourVisit from './pages/PlanYourVisit';
 import Sermons from './pages/Sermons';
@@ -27,6 +29,12 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith('/admin');
+
+  useEffect(() => {
+    if (posthogEnabled) {
+      posthog.capture('$pageview');
+    }
+  }, [location.pathname, location.search]);
 
   return (
     <>
