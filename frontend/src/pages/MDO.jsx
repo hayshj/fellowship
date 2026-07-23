@@ -59,7 +59,7 @@ function MDO() {
                 Thank you for your interest in joining us at Fellowship MDO! We look forward to welcoming your family to our program.
               </p>
               <p>
-                To join our waiting list, please register using the link below that corresponds with your child's age as of September 1, 2026.
+                Registration for the 26-27 school year is closed and waiting lists are full. Registration for 27-28 will begin in the Spring. Check back for more information.
               </p>
               <p>
                 If you have any questions, please contact our Director, Ms. Kaitlin, at{' '}
@@ -83,10 +83,10 @@ function MDO() {
                 <span className="font-bold text-gray-500">3 Year Old</span>
                 <span className="text-sm font-bold text-gray-400 uppercase tracking-wide">Closed</span>
               </div>
-              <a href="https://schools.mybrightwheel.com/sign-in?redirect_path=forms/d259fb87-b7bf-45b4-a127-183ac703dee6/self-service" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl flex items-center justify-between border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group">
-                <span className="font-bold text-gray-700">4 Year Old</span>
-                <span className="text-sm font-bold text-pink-500 uppercase tracking-wide group-hover:translate-x-1 transition-transform">Register →</span>
-              </a>
+              <div className="bg-gray-100 p-5 rounded-xl flex items-center justify-between border border-gray-200 opacity-60 cursor-not-allowed">
+                <span className="font-bold text-gray-500">4 Year Old</span>
+                <span className="text-sm font-bold text-gray-400 uppercase tracking-wide">Closed</span>
+              </div>
             </div>
           </div>
         </div>
