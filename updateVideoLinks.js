@@ -18,7 +18,7 @@ const SermonSchema = new mongoose.Schema(
 
 const Sermon = mongoose.models.Sermon || mongoose.model("Sermon", SermonSchema);
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI;
 const YOUTUBE_HTML = process.env.YOUTUBE_HTML || "./youtube.html";
 
 // Prefer this campus if multiple appear in the file
@@ -101,13 +101,13 @@ function extractYouTubeDateToUrlMap(html) {
 }
 
 async function main() {
-  if (!MONGO_URI) throw new Error("Missing MONGO_URI env var.");
+  if (!MONGODB_URI) throw new Error("Missing MONGODB_URI env var.");
   const html = fs.readFileSync(YOUTUBE_HTML, "utf8");
 
   const dateToVideo = extractYouTubeDateToUrlMap(html);
   console.log(`Found ${dateToVideo.size} dated YouTube videos in HTML.`);
 
-  await mongoose.connect(MONGO_URI);
+  await mongoose.connect(MONGODB_URI);
 
   // Only update sermons missing a videoLink
   const sermons = await Sermon.find(

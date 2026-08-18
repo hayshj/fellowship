@@ -98,9 +98,9 @@ async function runSermonJob() {
       String(now.getUTCDate()).padStart(2, '0'),
     ].join('-');
 
-    const apiBase =
-      process.env.API_BASE_URL ||
-      `http://localhost:${process.env.PORT || 3001}`;
+    // This job is scheduled only by the long-lived self-hosted process, so it
+    // must call that process directly rather than depend on the public domain.
+    const apiBase = `http://127.0.0.1:${process.env.PORT || 3001}`;
 
     // Authenticate as admin to get a JWT
     const { data: loginData } = await axios.post(

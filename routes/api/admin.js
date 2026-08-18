@@ -8,6 +8,11 @@ router.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
+    if (!process.env.JWT_SECRET) {
+      console.error('[Config] Missing required JWT_SECRET environment variable');
+      return res.status(503).json({ error: 'Admin authentication is not configured' });
+    }
+
     const admin = await Admin.findOne({ username: username?.toLowerCase().trim() });
     if (!admin) return res.status(404).json({ error: 'Admin not found' });
 

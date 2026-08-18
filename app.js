@@ -1,12 +1,11 @@
+require("dotenv").config();
+
 const express = require('express');
 const connectDB = require("./config/db");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const dotenv = require("dotenv");
 const path = require("path");
 const nodemailer = require("nodemailer");
-const cron = require("node-cron");
-const { runSermonJob } = require("./sundaySermonJob");
 
 const sermonRouter = require('./routes/api/sermon');
 const adminRouter = require('./routes/api/admin');
@@ -14,21 +13,28 @@ const eventsRouter = require('./routes/api/events');
 const connectGroupsRouter = require('./routes/api/connectGroups');
 const serveFormRouter = require('./routes/api/serveForm');
 
-dotenv.config(); // Load environment variables
-
 const app = express();
-
-// ✅ Connect Database
-connectDB();
 
 // ✅ Middleware
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const requireDatabase = async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    console.error(`[Database] ${error.message}`);
+    res.status(503).json({
+      error: "Database unavailable. Check the server's MONGODB_URI configuration.",
+    });
+  }
+};
+
 // ✅ API Routes
-app.use('/api/sermon', sermonRouter);
-app.use('/api/admin', adminRouter);
+app.use('/api/sermon', requireDatabase, sermonRouter);
+app.use('/api/admin', requireDatabase, adminRouter);
 app.use('/api/events', eventsRouter);
 app.use('/api/connectGroups', connectGroupsRouter);
 app.use('/api/serveForm', serveFormRouter);
@@ -86,8 +92,9 @@ app.post("/api/contact", async (req, res) => {
   }
 });
 
-// ✅ Serve frontend last (Vite uses 'dist'; CRA uses 'build')
-const frontendPath = path.join(__dirname, 'frontend', 'dist');
+// ✅ Serve the Vite build last. Vite outputs to root public/ so Vercel can
+// serve assets from its CDN and this Express app can serve the same files.
+const frontendPath = path.join(__dirname, 'public');
 app.use(express.static(frontendPath));
 
 // ✅ Frontend fallback (only for non-API routes)
@@ -95,12 +102,36 @@ app.get(/^\/(?!api\/).*/, (req, res) => {
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
-const port = process.env.PORT || 3001;
-
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-
-  // Every Sunday at 1:00 PM CST (America/Chicago handles CST/CDT automatically)
-  cron.schedule('0 13 * * 0', runSermonJob, { timezone: 'America/Chicago' });
-  console.log('Sunday sermon job scheduled (Sundays 1:00 PM CST)');
+app.use((error, req, res, next) => {
+  console.error("[Express] Unhandled request error:", error);
+  if (res.headersSent) return next(error);
+  return res.status(500).json({ error: "Internal server error" });
 });
+
+async function startServer() {
+  try {
+    await connectDB();
+  } catch (error) {
+    console.error(`[Startup] ${error.message}`);
+    process.exitCode = 1;
+    return;
+  }
+
+  const port = process.env.PORT || 3001;
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+
+    // Long-lived self-hosted processes can run node-cron. Vercel imports the
+    // exported app below and does not start a duplicate listener or scheduler.
+    const cron = require("node-cron");
+    const { runSermonJob } = require("./sundaySermonJob");
+    cron.schedule('0 13 * * 0', runSermonJob, { timezone: 'America/Chicago' });
+    console.log('Sunday sermon job scheduled (Sundays 1:00 PM America/Chicago)');
+  });
+}
+
+if (require.main === module) {
+  startServer();
+}
+
+module.exports = app;

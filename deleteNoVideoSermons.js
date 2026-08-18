@@ -15,9 +15,10 @@ const SermonSchema = new mongoose.Schema(
 const Sermon = mongoose.models.Sermon || mongoose.model("Sermon", SermonSchema);
 
 async function main() {
-  if (!process.env.MONGO_URI) throw new Error("Missing MONGO_URI env var.");
+  const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
+  if (!mongoUri) throw new Error("Missing MONGODB_URI env var.");
 
-  await mongoose.connect(process.env.MONGO_URI);
+  await mongoose.connect(mongoUri);
 
   // Find sermons with no videoLink (empty string, null, or missing field)
   const toDelete = await Sermon.find(

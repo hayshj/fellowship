@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 import "dotenv/config";
 
 // ---------- CONFIG ----------
-const MONGO_URI = process.env.MONGO_URI;             // required
+const MONGODB_URI = process.env.MONGODB_URI || process.env.MONGO_URI; // required
 const HTML_PATH = process.env.HTML_PATH || "./bltn.html"; // your downloaded HTML file
 const CARD_SELECTOR = ".mb-3.card.no-hover.header-md";    // matches your snippet
 
@@ -69,7 +69,7 @@ function extractDocFromCard($, cardEl) {
 
 // ---------- MAIN ----------
 async function main() {
-  if (!MONGO_URI) throw new Error("Missing MONGO_URI env var.");
+  if (!MONGODB_URI) throw new Error("Missing MONGODB_URI env var.");
 
   const fullPath = path.resolve(HTML_PATH);
   const html = fs.readFileSync(fullPath, "utf8");
@@ -82,7 +82,7 @@ async function main() {
     return;
   }
 
-  await mongoose.connect(MONGO_URI);
+  await mongoose.connect(MONGODB_URI);
 
   let processed = 0;
   let inserted = 0;

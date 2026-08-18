@@ -12,6 +12,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const Admin = require('./models/Admin');
+const { getMongoUri } = require('./config/db');
 
 const [,, username, password] = process.argv;
 
@@ -21,7 +22,7 @@ if (!username || !password) {
 }
 
 async function main() {
-  await mongoose.connect(process.env.MONGO_URI);
+  await mongoose.connect(getMongoUri());
   console.log('Connected to MongoDB');
 
   const existing = await Admin.findOne({ username: username.toLowerCase().trim() });

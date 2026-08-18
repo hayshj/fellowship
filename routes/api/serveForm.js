@@ -9,10 +9,15 @@ router.post("/", async (req, res) => {
     return res.status(400).json({ message: "All fields are required." });
   }
 
+  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    console.error('[Config] Missing EMAIL_USER or EMAIL_PASS for serve form');
+    return res.status(503).json({ message: "Server email is not configured." });
+  }
+
   try {
     const transporter = nodemailer.createTransport({
-      host: 'smtp.mail.me.com', // or your preferred SMTP host
-      port: 587,
+      host: process.env.SMTP_HOST || 'smtp.mail.me.com',
+      port: Number(process.env.SMTP_PORT || 587),
       secure: false,
       auth: {
         user: process.env.EMAIL_USER,

@@ -4,6 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    // Vercel serves root public/ through its CDN; Express serves the same
+    // directory when the application is self-hosted.
+    outDir: '../public',
+    emptyOutDir: true,
+  },
   plugins: [
     react(),
     tailwindcss(),

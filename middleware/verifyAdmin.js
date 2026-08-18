@@ -1,6 +1,11 @@
 const jwt = require('jsonwebtoken');
 
 const verifyAdmin = (req, res, next) => {
+  if (!process.env.JWT_SECRET) {
+    console.error('[Config] Missing required JWT_SECRET environment variable');
+    return res.status(503).json({ error: 'Admin authentication is not configured' });
+  }
+
   const token = req.headers.authorization?.split(' ')[1];
 
   if (!token) return res.status(401).json({ error: 'No token provided' });
