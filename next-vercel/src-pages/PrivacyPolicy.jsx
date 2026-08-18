@@ -1,0 +1,28 @@
+import React from "react";
+import WhiteNavbar from "../src-components/WhiteNavbar";
+
+function PrivacyPolicy() {
+  return (
+    <div className="font-sans antialiased bg-stone-50 text-gray-900 min-h-screen">
+      <WhiteNavbar />
+
+      <section className="py-24 px-6 md:px-12 lg:px-24">
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">Privacy Policy</h1>
+          <div className="w-16 h-1 bg-orange-500 mb-10 rounded-full"></div>
+
+          <div className="prose prose-lg text-gray-600 leading-relaxed space-y-6">
+            <p>
+              Fellowship Church values you, and we want to protect the information you give us that allows us to communicate with you. To that end, we do not share data (including mobile opt-in data) with third parties for marketing or promotional purposes.
+            </p>
+            <p>
+              We use PostHog, a website analytics tool, to understand which pages visitors find helpful. This is limited to anonymous pageview data (the pages you visit and general technical details like browser and device type) — we do not record what you type or click, and this data is never sold or shared for marketing.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default PrivacyPolicy;
