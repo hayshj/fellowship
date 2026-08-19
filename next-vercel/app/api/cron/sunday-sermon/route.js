@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { isOnePmInChicago, runSermonImport } from "@/lib/sermon-import";
+import { runSermonImport } from "@/lib/sermon-import";
 
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
@@ -12,12 +12,6 @@ export async function GET(request) {
 
   if (request.headers.get("authorization") !== `Bearer ${process.env.CRON_SECRET}`) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
-  // Vercel cron expressions use UTC. The route is invoked at both possible
-  // UTC offsets and only performs work at 1 PM America/Chicago.
-  if (!isOnePmInChicago()) {
-    return NextResponse.json({ ok: true, skipped: "Not 1 PM America/Chicago" });
   }
 
   try {

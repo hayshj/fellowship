@@ -28,10 +28,10 @@ Add the variables from `.env.example` in Vercel Project Settings. At minimum,
 the complete application needs `MONGODB_URI`, `JWT_SECRET`, and `CRON_SECRET`.
 Email variables are needed for form delivery; PostHog variables are optional.
 
-The included `vercel.json` exists only to preserve the original Sunday sermon
-schedule. Vercel cron uses UTC, so it invokes the protected route at both
-possible daylight-saving offsets; the route performs work only at 1 PM in
-America/Chicago and refuses duplicate sermon dates.
+The included `vercel.json` schedules the Sunday sermon import once each Sunday
+at 19:00 UTC, which is 1 PM Central Standard Time and 2 PM Central Daylight
+Time. Using one fixed UTC time keeps the schedule compatible with Vercel's
+Hobby plan. The import refuses duplicate sermon dates.
 
 ## MongoDB Atlas
 

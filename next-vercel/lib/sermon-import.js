@@ -59,16 +59,6 @@ function dateInChicago() {
   return `${values.year}-${values.month}-${values.day}`;
 }
 
-export function isOnePmInChicago() {
-  return (
-    new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/Chicago",
-      hour: "2-digit",
-      hour12: false,
-    }).format(new Date()) === "13"
-  );
-}
-
 export async function runSermonImport() {
   const [{ title, scripture, speaker }, videoLink] = await Promise.all([
     getSermonFromBulletin(),
