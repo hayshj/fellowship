@@ -14,15 +14,7 @@ function Events() {
         const response = await fetch("/api/events");
         const data = await response.json();
 
-        // Filter out events where the start date has already passed
-        const futureEvents = data.filter(event => {
-          const startDate = new Date(event.startDate);
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          return startDate >= today;
-        });
-
-        setEvents(futureEvents);
+        setEvents(data);
       } catch (error) {
         console.error("Error fetching events:", error);
       } finally {
@@ -53,11 +45,11 @@ function Events() {
             Get Involved
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter drop-shadow-2xl">
-            UPCOMING<br />
+            ALL<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 to-blue-200 pr-2">EVENTS</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-200 max-w-2xl leading-relaxed">
-            Connect, grow, and serve with us. Don’t miss what’s happening at Fellowship.
+            Connect, grow, and serve with us. See what’s happening at Fellowship.
           </p>
         </div>
       </header>
@@ -67,8 +59,8 @@ function Events() {
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">Save the Date</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-gray-900">What's Coming Up</h3>
+            <h2 className="text-sm font-bold tracking-widest text-neutral-500 uppercase mb-3">Fellowship Calendar</h2>
+            <h3 className="text-4xl md:text-5xl font-bold text-gray-900">All Events</h3>
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-blue-500 mx-auto mt-6 rounded-full"></div>
           </div>
 
@@ -93,7 +85,7 @@ function Events() {
               <div className="w-16 h-16 bg-stone-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Calendar className="w-8 h-8 text-stone-400" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Upcoming Events</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Events</h3>
               <p className="text-gray-500 mb-8 max-w-md mx-auto">
                 There are no events scheduled at the moment. Please check back later!
               </p>
