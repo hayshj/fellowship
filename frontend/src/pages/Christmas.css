@@ -1,0 +1,47 @@
+.christmas-page { --christmas-green: #2f4b40; --christmas-cream: #fff3d3; --christmas-red: #c7192a; background: var(--christmas-green); color: var(--christmas-cream); font-family: Arial, Helvetica, sans-serif; -webkit-font-smoothing: antialiased; }
+.christmas-page *, .christmas-page *::before, .christmas-page *::after { box-sizing: border-box; }
+.christmas-page a:focus-visible { outline: 3px solid currentColor; outline-offset: 6px; }
+.christmas-hero { position: relative; overflow: hidden; padding: 135px 7% 60px; text-align: center; }
+.christmas-hero-content { max-width: 900px; margin: auto; }
+.christmas-eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 24px; }
+.christmas-hero h1 { font-size: clamp(52px, 10.5vw, 148px); font-weight: 900; letter-spacing: -.075em; line-height: .85; margin: 30px 0; }
+.christmas-hero h1 > span { display: flex; justify-content: flex-end; align-items: center; gap: 18px; margin: 12px 3% 0 0; font-size: .43em; font-style: italic; color: #ec3341; letter-spacing: -.055em; }
+.christmas-hero h1 small { color: var(--christmas-cream); font-size: .4em; font-style: normal; letter-spacing: -.02em; }
+.christmas-side-note { position: absolute; left: 30px; top: 50%; writing-mode: vertical-rl; transform: translateY(-40%) rotate(180deg); text-transform: uppercase; font-size: 15px; font-weight: 800; }
+.christmas-side-note-right { left: auto; right: 30px; }
+.christmas-cassette { width: 78%; aspect-ratio: 1.59; margin: 32px auto 40px; border: 5px solid #1b2428; border-radius: 20px; padding: 5% 4% 0; position: relative; background: repeating-linear-gradient(0deg, transparent 0 5px, #070e1250 6px 8px), repeating-linear-gradient(90deg, #30383c 0 12px, #141d22 13px 15px); box-shadow: inset 0 0 0 2px #657073, 0 30px 35px -12px #101e1a99; transform: rotate(-1deg); }
+.cassette-label { background: #e8dfc7; border: 2px solid #697174; border-radius: 26px 26px 5px 5px; overflow: hidden; position: relative; z-index: 1; }
+.cassette-handwriting { display: block; color: var(--christmas-red); font-family: 'Brush Script MT', 'Segoe Print', Georgia, cursive; font-style: italic; font-weight: 800; font-size: clamp(19px, 3.8vw, 52px); line-height: 1.5; letter-spacing: .035em; text-transform: uppercase; transform: rotate(-2deg); }
+.cassette-tape { background: #333735; padding: 3% 14%; display: flex; gap: 7%; align-items: center; justify-content: space-between; box-shadow: inset 0 2px 8px #0007; }
+.cassette-reel { width: 24%; aspect-ratio: 1; border: 7px solid #182329; border-radius: 50%; background: repeating-conic-gradient(#8e9896 0deg 18deg, transparent 18deg 60deg), var(--christmas-green); box-shadow: 0 0 0 2px #7d8789, inset 0 0 0 7px #a2aeab; }
+.cassette-window { width: 40%; height: 40px; background: linear-gradient(100deg, #383e3e, #776c60, #303939); border: 5px solid #172126; box-shadow: 0 1px 1px #9c9f90; }
+.cassette-label-bottom { display: flex; align-items: center; justify-content: center; gap: 5%; padding: 3% 2% 0; }
+.cassette-label-bottom > span { background: var(--christmas-red); padding: 1% 3%; color: var(--christmas-cream); font-size: clamp(15px, 2.8vw, 38px); font-weight: 800; letter-spacing: -.06em; border-radius: 4px 4px 0 0; }
+.cassette-label-bottom small { color: #333b36; font-size: clamp(5px, .8vw, 11px); text-align: left; line-height: 1.3; font-weight: 800; }
+.cassette-base { position: absolute; bottom: 0; width: 66%; left: 17%; height: 22%; border: 3px solid #131f26; border-bottom: 0; background: #283238aa; clip-path: polygon(5% 0, 95% 0, 100% 100%, 0 100%); display: flex; justify-content: space-around; align-items: flex-end; padding-bottom: 2%; }
+.cassette-base i { width: 6%; aspect-ratio: 1; border-radius: 50%; background: #0b1012; box-shadow: 1px 1px 1px #87918b; }
+.cassette-screw { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: #727975; box-shadow: inset 1px 2px 1px #111; }
+.screw-one { top: 3%; left: 3%; }.screw-two { top: 3%; right: 3%; }.screw-three { bottom: 3%; left: 3%; }.screw-four { bottom: 3%; right: 3%; }
+.christmas-hero-caption { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; margin-bottom: 25px; }
+.christmas-actions { display: flex; justify-content: center; gap: 30px; align-items: center; flex-wrap: wrap; }
+.christmas-button { display: inline-flex; justify-content: center; align-items: center; gap: 25px; padding: 17px 25px; background: var(--christmas-cream); color: var(--christmas-green); text-transform: uppercase; font-size: 11px; font-weight: 800; letter-spacing: .08em; transition: background .2s, transform .2s; }
+.christmas-button:hover { background: #fff; transform: translateY(-2px); }
+.christmas-text-link { display: inline-flex; gap: 15px; align-items: center; font-weight: 700; font-size: 13px; padding: 8px 0; border-bottom: 1px solid currentColor; }
+.christmas-text-link:hover { opacity: .75; }
+.christmas-section { padding: 100px 6%; }.christmas-container { max-width: 1120px; margin: auto; }
+.christmas-page h2 { font-size: clamp(42px, 5.5vw, 76px); font-weight: 900; line-height: .98; letter-spacing: -.06em; margin: 0; }
+.christmas-page h2 em { font-family: Georgia, serif; font-weight: 400; }
+.christmas-services { scroll-margin-top: 75px; }
+.christmas-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; margin-bottom: 45px; }.christmas-section-heading > p { font-size: 14px; line-height: 1.8; }
+.christmas-service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.christmas-service-card { background: var(--christmas-cream); color: var(--christmas-green); padding: 40px; display: flex; align-items: flex-start; flex-direction: column; }
+.christmas-track { display: block; font-size: 10px; font-weight: 800; letter-spacing: .15em; margin-bottom: 26px; }
+.christmas-service-card h3 { font-size: clamp(30px, 3vw, 43px); font-weight: 900; line-height: 1; letter-spacing: -.05em; margin-bottom: 24px; }
+.christmas-service-dates { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+.christmas-service-time { font-size: clamp(30px, 3.3vw, 45px); letter-spacing: -.05em; font-weight: 900; margin-bottom: 22px; }.christmas-service-time small { font-size: .37em; letter-spacing: 0; }.christmas-service-time > span { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
+.christmas-service-card > p:last-of-type { font-size: 14px; line-height: 1.8; margin-bottom: 24px; }.christmas-service-card .christmas-text-link { margin-top: auto; }
+.christmas-eve-card { background: var(--christmas-red); color: var(--christmas-cream); }.christmas-eve-time { font-size: 23px; font-weight: 800; letter-spacing: -.04em; margin: 6px 0 26px; }
+.christmas-location { display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #fff3d33d; padding: 26px 0; font-size: 13px; }.christmas-directions { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
+.christmas-invitation { text-align: center; }.christmas-invitation h2 { font-size: clamp(50px, 7vw, 96px); }.christmas-invitation h2 em { color: var(--christmas-cream); }.christmas-invitation p:not(.christmas-eyebrow) { font-size: 13px; margin: 28px 0; }.christmas-invitation-url { display: block; width: fit-content; margin: 40px auto 0; font-size: 11px; letter-spacing: .08em; }
+@media (min-width: 1600px) { .christmas-hero { padding-top: 150px; } }
+@media (max-width: 760px) { .christmas-hero { padding: 130px 6% 55px; }.christmas-side-note { display: none; }.christmas-hero h1 { font-size: clamp(43px, 12vw, 90px); }.christmas-hero h1 > span { margin-right: 1%; gap: 10px; }.christmas-cassette { width: 94%; border-width: 3px; border-radius: 12px; margin: 28px auto 35px; }.cassette-label { border-radius: 14px 14px 3px 3px; }.cassette-reel { border-width: 4px; box-shadow: 0 0 0 1px #7d8789, inset 0 0 0 4px #a2aeab; }.cassette-window { height: 25px; border-width: 3px; }.cassette-handwriting { font-size: clamp(19px, 5vw, 38px); }.cassette-label-bottom > span { font-size: clamp(18px, 4vw, 30px); }.christmas-section { padding: 64px 6%; }.christmas-section-heading { align-items: flex-start; flex-direction: column; gap: 20px; }.christmas-service-grid { grid-template-columns: 1fr; }.christmas-service-card { padding: 30px; }.christmas-service-card h3 { font-size: 38px; }.christmas-service-time { font-size: 40px; }.christmas-location { flex-wrap: wrap; font-size: 12px; }.christmas-directions { margin-left: 32px; width: 100%; }.christmas-eyebrow { font-size: 10px; }.christmas-actions { gap: 20px; }.christmas-hero-caption { font-size: 10px; } }

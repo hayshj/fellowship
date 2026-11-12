@@ -18,6 +18,7 @@ import Serve from './pages/Serve';
 import Midweek from './pages/Midweek';
 import Give from './pages/Give';
 import Easter from './pages/Easter';
+import Christmas from './pages/Christmas';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 import AdminLogin from './pages/AdminLogin';
@@ -56,6 +57,7 @@ function App() {
         <Route path="/children/mdo" element={<MDO />} />
         <Route path="/give" element={<Give />} />
         <Route path="/easter" element={<Easter />} />
+        <Route path="/christmas" element={<Christmas />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
 
         {/* Admin routes */}
