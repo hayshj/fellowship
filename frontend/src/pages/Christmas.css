@@ -48,7 +48,7 @@
 .christmas-service-dates { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
 .christmas-service-time { font-size: clamp(30px, 3.3vw, 45px); letter-spacing: -.05em; font-weight: 900; margin-bottom: 22px; }.christmas-service-time small { font-size: .37em; letter-spacing: 0; }.christmas-service-time > span { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
 .christmas-service-card > p:last-of-type { font-size: 14px; line-height: 1.8; margin-bottom: 24px; }.christmas-service-card .christmas-text-link { margin-top: auto; }
-.christmas-eve-card { background: var(--christmas-red); color: var(--christmas-cream); }.christmas-eve-time { font-size: 23px; font-weight: 800; letter-spacing: -.04em; margin: 6px 0 26px; }
+.christmas-eve-card { background: var(--christmas-red); color: var(--christmas-cream); }
 .christmas-location { display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #fff3d33d; padding: 26px 0; font-size: 13px; }.christmas-directions { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; font-weight: 700; }
 .christmas-invitation { text-align: center; }.christmas-invitation h2 { font-size: clamp(50px, 7vw, 96px); }.christmas-invitation h2 em { color: var(--christmas-cream); }.christmas-invitation p:not(.christmas-eyebrow) { font-size: 13px; margin: 28px 0; }.christmas-invitation-url { display: block; width: fit-content; margin: 40px auto 0; font-size: 11px; letter-spacing: .08em; }
 @media (min-width: 1600px) { .christmas-hero { padding-top: 150px; } }
